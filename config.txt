@@ -1,0 +1,2763 @@
+!
+! Last configuration change at 15:22:06 CEST Mon Oct 21 2019 by toti
+! NVRAM config last updated at 10:25:43 CEST Mon Oct 21 2019 by toti
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+service counters max age 5
+!
+hostname KN_Main6807
+!
+boot-start-marker
+boot system bootdisk:/s2t54-adventerprisek9_npe-mz.SPA.152-1.SY7.bin
+boot-end-marker
+!
+!
+logging buffered 512000
+******************************************************
+                   ...
+******************************************************
+!
+******************************************************
+                   ...
+******************************************************
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local
+!
+!
+!
+!
+!
+!
+aaa session-id common
+platform ip cef load-sharing ip-only
+clock timezone CEST 2 0
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip domain-name kabelnet.hu
+ip name-server 79.121.0.2
+ipv6 unicast-routing
+vtp mode transparent
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+no spanning-tree vlan 262,273,276,279
+spanning-tree vlan 10 priority 0
+!
+redundancy
+ main-cpu
+  auto-sync running-config
+ mode sso
+!
+vlan internal allocation policy ascending
+vlan access-log ratelimit 2000
+!
+vlan 10
+ name VL_Cisco_Management
+!
+vlan 18
+ name VL_Otteveny_inet
+!
+vlan 20
+ name VL_Servers_public
+!
+vlan 21
+ name VL_Nemesis_private
+!
+vlan 22
+ name VLTkomESVDN_LDA_2083
+!
+vlan 24
+ name VL_NAS814_mgmt
+!
+vlan 56
+ name VL_VDN_SomogyTV_MC
+!
+vlan 78
+ name VL_DTV_A_network
+!
+vlan 79
+ name VL_DTV_B_network
+!
+vlan 80
+ name VL_DTV_C_network
+!
+vlan 85
+ name VL_HMTS_LAN
+!
+vlan 100
+ remote-span
+!
+vlan 200
+ name VL_E6000_Gyor#2_L1
+!
+vlan 202
+ name VL_NBSZ_Gyor_2016
+!
+vlan 203
+ name VL_E6000_Gyor#1_L1
+!
+vlan 204
+ name VL_E6000_3_def
+!
+vlan 205
+ name VL_E6k_Gyr2_PBR_NAT
+!
+vlan 206
+ name VL_TMP_E6000_Movar
+!
+vlan 207
+ name DTV_ORF12_Fertod_Gy
+!
+vlan 208
+ name VL_Fertod_internet2
+!
+vlan 210
+ name VL_E6000_3_TcomVRF
+!
+vlan 211
+ name VL_E6000_3_VDNVRF
+!
+vlan 212
+ name VL_E6000_Gyor#2_L2
+!
+vlan 213
+ name VL_E6000_Gyor#1_L2
+!
+vlan 214
+ name VL_E6000_3_NAT
+!
+vlan 215
+ name VL_Csorna_internet
+!
+vlan 216
+ name VL_Kapuvar_internet
+!
+vlan 217
+ name VL_Fertod_internet
+!
+vlan 218
+ name VL_RabakoziTV_MC
+!
+vlan 219
+ name VL_CMTS_teszt_Gyor
+!
+vlan 222
+ name VL_Fertod_DTV_RHE
+!
+vlan 223
+ name VL_Csorna_DTV_RHE
+!
+vlan 224
+ name VL_Kapuvar_DTV_RHE
+!
+vlan 225
+ name VL_Csrna_BSR64k2_lag
+!
+vlan 226
+ name OLD_BSR64k_Gyor#3_L4
+!
+vlan 227
+ name VL_Gyor-Csorna-NAT
+!
+vlan 228
+ name VL_Otteveny_DTV_RHE
+!
+vlan 229
+ name VL_Fertod_internet_2
+!
+vlan 231
+ name VL_NAT_from_ASR1k2
+!
+vlan 232
+ name VL_MSZM-GyT_internet
+!
+vlan 233
+!
+vlan 235
+ name Vidanet-MVM-MGMT
+!
+vlan 236
+ name VL_NAT_to_ASR1k2
+!
+vlan 237
+ name VL_Csrna_BSR64k1_lag
+!
+vlan 238
+ name VL_VDN_RADIUS_LAN
+!
+vlan 239
+ name OLD_Gyr_Sio_VoIP_NAT
+!
+vlan 240
+ name OLD_Gyor_Siofok_SSG
+!
+vlan 245
+ name VL_MVM_LL_BevHivatal
+!
+vlan 246
+ name VL_MVM_LL_BevHiva_L2
+!
+vlan 247
+ name VL_E6000_2_TkomVRF
+!
+vlan 248
+ name VL_E6000_1_TkomVRF
+!
+vlan 250
+ name VL_Sio_GPON_regi
+!
+vlan 252
+ name VL_E6000_2_VDNVRF
+!
+vlan 253
+ name VL_E6000_1_VDNVRF
+!
+vlan 254
+ name VL_GPON_DSN_Sio_mgmt
+!
+vlan 255
+ name VL_GPON_DSN_Sio_inet
+!
+vlan 256
+ name VL_GPON_DSN_Sio_ONTm
+!
+vlan 257
+ name VL_BladeManagement
+!
+vlan 258
+ name VL_GPON_TESZT_mgmt
+!
+vlan 259
+ name VL_GPON_TESZT_inet
+!
+vlan 260
+ name VL_GPON_TESZT_VoIP
+!
+vlan 261
+ name VL_GPON_TESZT_ONTmgt
+!
+vlan 262
+ name VL_ZTE_GPON_inet
+!
+vlan 263
+ name VL_ZTE_GPON_mgmt
+!
+vlan 264
+ name VL_ZTE_GPON_VoIP
+!
+vlan 265
+ name VL_ZTE_GPON_Bfld_ine
+!
+vlan 266
+ name VL_ZTE_GPON_Bfld_mgm
+!
+vlan 267
+ name VL_ZTE_GPON_Bfld_VoI
+!
+vlan 268
+ name VL_E6k_CS-SZIP__VNVR
+!
+vlan 269
+ name VL_Pecs-HarkLL-LMKft
+!
+vlan 270
+ name VL_VDN_HyperV_clust
+!
+vlan 271
+ name VL_E6k_CSo2__VNVR
+!
+vlan 272
+ name VL_VMware_management
+!
+vlan 273
+ name VL_GPON_ZTE_Blelle_inet
+!
+vlan 274
+ name VL_GPON_ZTE_Blelle_mgmt
+!
+vlan 275
+ name VL_GPON_ZTE_Blelle_VoIP
+!
+vlan 276
+ name VL_GPON_ZTE_Siofok_inet
+!
+vlan 277
+ name VL_GPON_ZTE_Siofok_mgmt
+!
+vlan 278
+ name VL_GPON_ZTE_Siofok_VoIP
+!
+vlan 279
+ name VL_GPON_ZTE_GyorHattyu_inet
+!
+vlan 280
+ name VL_GPON_ZTE_GyorHattyu_mgmt
+!
+vlan 281
+ name VL_GPON_ZTE_GyorHattyu_VoIP
+!
+vlan 301
+ name VL_HBO_Go
+!
+vlan 302
+ name VL_GGC_node1
+!
+vlan 303
+ name VL_GGC_node2
+!
+vlan 401
+!
+vlan 460
+ name VDN_Triotel_VoIP
+!
+vlan 463
+ name VL_NAT_to_ASR1k1
+!
+vlan 464
+ name VL_NAT_from_ASR1k1
+!
+vlan 501
+ name LL_OlmpSrtprk_exDzsa
+!
+vlan 502
+!
+vlan 503
+ name VL_VDN_franch_Teleki
+!
+vlan 504
+ name VDN_LAN_Plaza
+!
+vlan 505
+ name VDN_inet_Plaza
+!
+vlan 506
+ name LL_Uszoda_L2
+!
+vlan 508
+ name Comtech_TX_pltfrm_mg
+!
+vlan 509
+ name VDN_Gyor-Kapuvar_LAN
+!
+vlan 510
+ name LL_Sio_SzoladHollF
+!
+vlan 511
+ name LL_Sio_PlastElectro
+!
+vlan 512
+ name LL_Gyo_DozsaPalya
+!
+vlan 514
+ name LL_Gyo_Dzsa_TMP180607
+!
+vlan 515
+ name LL_Gyo_Dzsa_TMP180626
+!
+vlan 516
+ name VL_LL_TPSCGyor_L2
+!
+vlan 521
+ name LL_Gyor-Belva_FreeWi
+!
+vlan 900
+ name CQ_mgmt
+!
+vlan 901
+ name VL_VDN_iSCSI_1
+!
+vlan 902
+ name VL_VDN_iSCSI_2
+!
+vlan 999
+ name PecsHArkXAKTA
+!
+vlan 1000
+ name Toti_teszt
+!
+vlan 1001
+ name VDN_RSPAN
+!
+vlan 2000
+ name Harkany_RHE
+!
+vlan 2014
+!
+vlan 2015
+ name VL_TCom_RADIUS
+!
+vlan 2020
+!
+vlan 2022
+ name Kaposvar_inet
+!
+vlan 2023
+ name Kaposvar_belso
+!
+vlan 2024,2026,2029
+!
+vlan 2098
+ name DTV_SimulCrCypt
+!
+vlan 2100
+ name VL_Tcom_Movar_FixIP
+!
+vlan 2101
+ name MMovar_HTV_MC
+!
+vlan 2102-2103
+!
+vlan 2105
+ name Telekom-fix-IP-cust
+!
+vlan 2106
+ name RHE-Pecs
+!
+vlan 2107
+ name Harkany_inet
+!
+vlan 2108
+ name RHE-Tata
+!
+vlan 2109
+ name RHE-Kaposvar
+!
+vlan 2110
+ name Pecs_VTV_VLAN
+!
+vlan 2124
+ name VoIP_telekom_VLAN_m
+!
+vlan 2125
+ name VL_Gyor-Siofok-MT
+!
+vlan 2126
+ name VL_Siofok_RHE
+!
+vlan 2127
+!
+vlan 2128
+ name Siofok-valami
+!
+vlan 2129
+ name VL_E6k_Movar_VDNVRF
+!
+vlan 2130
+ name VL_E6k_Kapos_TkomVRF
+!
+vlan 2131
+ name VL_E6k_Kapos_VDNVRF
+!
+vlan 2214
+ name Internet_30GE_spare
+!
+vlan 2229
+ name Telekom-IPv6-VLAN-2
+!
+vlan 2302
+ name THoV_MT_tr_ou_cust2
+!
+vlan 2303
+ name THoV_MT_tr_out_mgmt2
+!
+vlan 2305
+ name Telekom-Cust-fixIP2
+!
+vlan 2324
+ name T-Com_VoIP_VLAN2
+!
+vlan 2453
+!
+vlan 2600
+ name VDN-HFC-MCpeering
+!
+vlan 2601
+ name ITV_HFC_CX_ECMG
+!
+vlan 2602
+ name ITV_HFC_MGMT
+!
+vlan 2603
+ name Vidanet_Move
+!
+vlan 2800
+ name VL_Porion-mgt-device
+!
+vlan 2924
+ name VL_Porion-MGMT
+!
+vlan 3000
+ name RPHY_teszt
+!
+!
+class-map match-any class-copp-icmp-redirect-unreachable
+class-map match-all class-copp-glean
+class-map match-all class-copp-receive
+class-map match-all class-copp-options
+class-map match-all class-copp-broadcast
+class-map match-all class-copp-mcast-acl-bridged
+class-map match-all class-copp-slb
+class-map match-all class-copp-mtu-fail
+class-map match-all class-copp-ttl-fail
+class-map match-all class-copp-arp-snooping
+class-map match-any class-copp-mcast-copy
+class-map match-any class-copp-ip-connected
+class-map match-any class-copp-match-igmp
+ match access-group name acl-copp-match-igmp
+class-map match-all class-copp-unknown-protocol
+class-map match-any class-copp-vacl-log
+class-map match-all class-copp-mcast-ipv6-control
+class-map match-any class-copp-match-pimv6-data
+ match access-group name acl-copp-match-pimv6-data
+class-map match-any class-copp-mcast-punt
+class-map match-all class-copp-unsupp-rewrite
+class-map match-all class-copp-ucast-egress-acl-bridged
+class-map match-all class-copp-ip-admission
+class-map match-any class-copp-dpss-divert
+class-map match-all class-copp-service-insertion
+class-map match-all class-copp-mac-pbf
+class-map match-any class-copp-match-mld
+ match access-group name acl-copp-match-mld
+class-map match-all class-copp-ucast-ingress-acl-bridged
+class-map match-all class-copp-dhcp-snooping
+class-map match-all class-copp-wccp
+class-map match-all class-copp-nd
+class-map match-any class-copp-ipv6-connected
+class-map match-all class-copp-mcast-rpf-fail
+class-map match-any class-copp-match-ndv6hl
+ match access-group name acl-copp-match-ndv6hl
+class-map match-any class-copp-ucast-rpf-fail
+class-map match-all class-copp-mcast-ip-control
+class-map match-any class-copp-match-pim-data
+ match access-group name acl-copp-match-pim-data
+class-map match-any class-copp-match-ndv6
+ match access-group name acl-copp-match-ndv6
+class-map match-any class-copp-mcast-v4-data-on-routedPort
+class-map match-any class-copp-mcast-v6-data-on-routedPort
+!
+policy-map policy-default-autocopp
+ class class-copp-mcast-v4-data-on-routedPort
+   police rate 10 pps burst 1 packets    conform-action drop     exceed-action drop
+ class class-copp-mcast-v6-data-on-routedPort
+   police rate 10 pps burst 1 packets    conform-action drop     exceed-action drop
+ class class-copp-dpss-divert
+   police rate 1000 pps burst 1000 packets    conform-action transmit     exceed-action drop
+ class class-copp-match-mld
+   police rate 5000 pps burst 5000 packets    conform-action set-discard-class-transmit 48    exceed-action drop
+ class class-copp-match-igmp
+   police rate 5000 pps burst 5000 packets    conform-action set-discard-class-transmit 48    exceed-action drop
+ class class-copp-icmp-redirect-unreachable
+   police rate 100 pps burst 10 packets    conform-action transmit     exceed-action drop
+ class class-copp-ucast-rpf-fail
+   police rate 100 pps burst 10 packets    conform-action transmit     exceed-action drop
+ class class-copp-vacl-log
+   police rate 2000 pps burst 1 packets    conform-action transmit     exceed-action drop
+ class class-copp-mcast-punt
+   police rate 1000 pps burst 256 packets    conform-action transmit     exceed-action drop
+ class class-copp-mcast-copy
+   police rate 1000 pps burst 256 packets    conform-action transmit     exceed-action drop
+ class class-copp-ip-connected
+   police rate 1000 pps burst 256 packets    conform-action transmit     exceed-action drop
+ class class-copp-ipv6-connected
+   police rate 1000 pps burst 256 packets    conform-action transmit     exceed-action drop
+ class class-copp-match-pim-data
+   police rate 1000 pps burst 1000 packets    conform-action transmit     exceed-action drop
+ class class-copp-match-pimv6-data
+   police rate 1000 pps burst 1000 packets    conform-action transmit     exceed-action drop
+ class class-copp-match-ndv6
+   police rate 1000 pps burst 1000 packets    conform-action set-discard-class-transmit 48    exceed-action drop
+ class class-copp-ttl-fail
+   police rate 10 pps burst 1 packets
+!
+!
+!
+!
+!
+interface Loopback0
+ ip vrf forwarding VidanetFixIP
+ no ip address
+!
+interface Port-channel1
+ description up_Csorna_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,22,207,215-218,222-224,227,229,257,268,271
+ switchport trunk allowed vlan add 509,901
+!
+interface Port-channel2
+ description up_4848E10G_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20-22,24,78-80,202,203,207,213,218,219,226
+ switchport trunk allowed vlan add 235,238-240,245,246,257-261,263,301,302,460
+ switchport trunk allowed vlan add 504-506,508,509,521,901,902,1000,1001,2015
+ switchport trunk allowed vlan add 2098,2100,2101,2600-2603,2800,2924
+!
+interface Port-channel3
+ description up_ASR1k1_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 214,215,463,464,2022,2026
+!
+interface Port-channel4
+ description up_ASR1k2_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,205,214,215,231,236
+!
+interface Port-channel5
+ description Telekom_60G_Spare_link
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+!
+interface Port-channel6
+ description Telekom_60G_Main_link
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+!
+interface Port-channel7
+ description to_up_KN_GGC10G
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,22,219,258-261,301,302,900
+!
+interface Port-channel8
+ description up_Otteveny_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,18,228,232
+!
+interface Port-channel9
+ description PCh_E6000_Gyor_3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 204,210,211,214
+!
+interface Port-channel10
+ description up_3850_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,18,20-22,78-80,219,238,257-264,272,279-281
+ switchport trunk allowed vlan add 501,512,514-516,901,902,2015,2214,2800,3000
+!
+interface Port-channel11
+ description PCh_E6000_Gyor_1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,213,248,253
+!
+interface Port-channel12
+ description PCh_E6000_Gyor_2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 200,205,212,247,252
+!
+interface Port-channel20
+ description to_KN_Movar_PCh
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,2026,2100,2101,2129
+!
+interface TenGigabitEthernet1/1
+ description TCom-Main-L5
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet1/2
+ description TCom-Main-L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet1/3
+ description TCom-Spare-L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface TenGigabitEthernet1/4
+ description TCom-Spare-L4
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface TenGigabitEthernet1/5
+ description up_Csorna_PCh_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,22,207,215-218,222-224,227,229,257,268,271
+ switchport trunk allowed vlan add 509,901
+ channel-group 1 mode active
+!
+interface TenGigabitEthernet1/6
+ description TCom-Main-L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet1/7
+ description to_up_KN_GGC10G_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,22,219,258-261,301,302,900
+ channel-group 7 mode active
+!
+interface TenGigabitEthernet1/8
+ description TCom-Main-L6
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet2/1
+ description TCom-Spare-L5
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface TenGigabitEthernet2/2
+ description TCom-Spare-L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface TenGigabitEthernet2/3
+ description TCom-Spare-L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface TenGigabitEthernet2/4
+ description TCom-Main-L4
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet2/5
+ description to_up_KN_GGC10G_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,22,219,258-261,301,302,900
+ channel-group 7 mode active
+!
+interface TenGigabitEthernet2/6
+ description TCom-Main-L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2014,2015,2020,2022-2024,2029,2098
+ switchport trunk allowed vlan add 2102-2110,2124-2128,2130,2131
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet2/7
+ description up_Csorna_PCh_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,22,207,215-218,222-224,227,229,257,268,271
+ switchport trunk allowed vlan add 509,901
+ channel-group 1 mode active
+!
+interface TenGigabitEthernet2/8
+ description TCom-Spare-L6
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 2000,2020,2022-2024,2098,2106-2110,2125-2128
+ switchport trunk allowed vlan add 2130,2131,2214,2229,2302,2303,2305,2324
+ channel-group 5 mode active
+!
+interface GigabitEthernet3/1
+ no ip address
+ shutdown
+!
+interface GigabitEthernet3/2
+ no ip address
+ shutdown
+!
+interface GigabitEthernet3/3
+ description Otteveny_optika
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,18,228,232
+ channel-group 8 mode active
+!
+interface TenGigabitEthernet3/4
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet3/5
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/1
+ description TMS_monitoring
+ switchport
+!
+interface GigabitEthernet4/2
+ description to_B2IO3P1_iSCSI
+ switchport
+ switchport mode access
+ switchport access vlan 901
+ shutdown
+!
+interface GigabitEthernet4/3
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet4/4
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet4/5
+ no ip address
+!
+interface TenGigabitEthernet5/1
+ description ArrisE6000_1_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,213,248,253
+ channel-group 11 mode active
+!
+interface TenGigabitEthernet5/2
+ description ArrisE6000_2_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 200,205,212,247,252
+ channel-group 12 mode active
+!
+interface TenGigabitEthernet5/3
+ description ASR1k1_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 214,215,463,464,2022,2026
+ channel-group 3 mode active
+ hold-queue 4096 in
+!
+interface TenGigabitEthernet5/4
+ description ASR1k2_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,205,214,215,231,236
+ channel-group 4 mode active
+ hold-queue 4096 in
+!
+interface TenGigabitEthernet5/5
+ description ArrisE6000_3_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 204,210,211,214
+ channel-group 9 mode active
+!
+interface TenGigabitEthernet5/6
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet5/7
+ description GGC_node2_host1_uplink
+ switchport
+ switchport mode access
+ switchport access vlan 303
+ spanning-tree portfast edge
+!
+interface TenGigabitEthernet5/8
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet5/9
+ description ArrisE6000_2_L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 200,205,212,247,252
+ shutdown
+ channel-group 12 mode active
+!
+interface TenGigabitEthernet5/10
+ description ArrisE6000_1_L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,213,248,253
+ shutdown
+ channel-group 11 mode active
+!
+interface TenGigabitEthernet5/11
+ description ASR1k1_L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 214,215,463,464,2022,2026
+ channel-group 3 mode active
+ hold-queue 4096 in
+!
+interface TenGigabitEthernet5/12
+ description trunk_to_3850_L1
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,18,20-22,78-80,219,238,257-264,272,279-281
+ switchport trunk allowed vlan add 501,512,514-516,901,902,2015,2214,2800,3000
+ channel-group 10 mode active
+!
+interface TenGigabitEthernet5/13
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet5/14
+ description to_KN_Movar_L1_1470nm
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,2026,2100,2101,2129
+ channel-group 20 mode active
+!
+interface TenGigabitEthernet5/15
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet5/16
+ description Trunk_to_4948E10G
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20-22,24,78-80,202,203,207,213,218,219,226
+ switchport trunk allowed vlan add 235,238-240,245,246,257-261,263,301,302,460
+ switchport trunk allowed vlan add 504-506,508,509,521,901,902,1000,1001,2015
+ switchport trunk allowed vlan add 2098,2100,2101,2600-2603,2800,2924
+ channel-group 2 mode active
+!
+interface TenGigabitEthernet6/1
+ description ArrisE6000_1_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,213,248,253
+ channel-group 11 mode active
+!
+interface TenGigabitEthernet6/2
+ description ArrisE6000_2_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 200,205,212,247,252
+ channel-group 12 mode active
+!
+interface TenGigabitEthernet6/3
+ description ASR1k1_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 214,215,463,464,2022,2026
+ channel-group 3 mode active
+ hold-queue 4096 in
+!
+interface TenGigabitEthernet6/4
+ description ASR1k2_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,205,214,215,231,236
+ channel-group 4 mode active
+!
+interface TenGigabitEthernet6/5
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet6/6
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet6/7
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet6/8
+ description ArrisE6000_2_L4
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 200,205,212,247,252
+ shutdown
+ channel-group 12 mode active
+!
+interface TenGigabitEthernet6/9
+ description ArrisE6000_3_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 204,210,211,214
+ channel-group 9 mode active
+!
+interface TenGigabitEthernet6/10
+ description GGC_node2_host2_uplink
+ switchport
+ switchport mode access
+ switchport access vlan 303
+ spanning-tree portfast edge
+!
+interface TenGigabitEthernet6/11
+ description ASR1k2_L3
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 203,205,214,215,231,236
+ channel-group 4 mode active
+!
+interface TenGigabitEthernet6/12
+ description trunk_to_3850_L2
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,18,20-22,78-80,219,238,257-264,272,279-281
+ switchport trunk allowed vlan add 501,512,514-516,901,902,2015,2214,2800,3000
+ channel-group 10 mode active
+!
+interface TenGigabitEthernet6/13
+ description up_LL_DozsaPalya
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,501,512,514,515
+!
+interface TenGigabitEthernet6/14
+ description to_KN_Movar_L2_1530nm
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,2026,2100,2101,2129
+ shutdown
+ channel-group 20 mode active
+!
+interface TenGigabitEthernet6/15
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet6/16
+ description Trunk_to_4948E10G
+ switchport
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20-22,24,78-80,202,203,207,213,218,219,226
+ switchport trunk allowed vlan add 235,238-240,245,246,257-261,263,301,302,460
+ switchport trunk allowed vlan add 504-506,508,509,521,901,902,1000,1001,2015
+ switchport trunk allowed vlan add 2098,2100,2101,2600-2603,2800,2924
+ channel-group 2 mode active
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ description MANAGEMENT_VLAN
+ ip address 10.200.0.1 255.255.255.0
+!
+interface Vlan18
+ description Otteveny_VLAN
+ ip address 192.168.254.1 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan20
+ description Servers_79.121.0.0
+ ip address 192.168.71.1 255.255.255.0 secondary
+ ip address 194.149.41.1 255.255.255.224 secondary
+ ip address 79.121.0.1 255.255.255.192
+ no ip redirects
+ ipv6 address 2A03:BF00:200::1/64
+ ipv6 nd prefix default no-advertise
+ ipv6 nd ra suppress
+!
+interface Vlan21
+ description Nemesis-network
+ ip address 10.121.0.1 255.255.255.0
+!
+interface Vlan22
+ description VL_Tkom_ES_VDN_LDAP_2083
+ ip address 84.2.0.20 255.255.255.248
+!
+interface Vlan24
+ description NAS814
+ ip address 10.201.0.1 255.255.255.0
+!
+interface Vlan40
+ no ip address
+ shutdown
+!
+interface Vlan200
+ description VLAN_E6000_Gyor#2_L1
+ ip address 192.168.250.225 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route-noNAT
+ ip ospf priority 255
+!
+interface Vlan202
+ description NBSZ_Gyor_20161116
+ ip address 79.121.0.169 255.255.255.248
+!
+interface Vlan203
+ description VLAN_E6000_Gyor1_L1
+ ip address 192.168.250.65 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+ ip ospf priority 255
+ ipv6 address 2A03:BF00:201:1::1/64
+ ipv6 nd ra suppress
+!
+interface Vlan204
+ description E6000_Gyor#3
+ ip address 192.168.250.193 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route-noNAT
+ ip ospf priority 255
+!
+interface Vlan205
+ description E6000_Gyor2_PBR_NAT
+ ip address 192.168.251.17 255.255.255.240
+ no ip redirects
+!
+interface Vlan206
+ description E6000_Movar_TEMP
+ ip address 192.168.248.33 255.255.255.252
+!
+interface Vlan207
+ description DTV_ORF12_Fertod_Gyor
+ ip address 192.168.250.161 255.255.255.240
+!
+interface Vlan208
+ description Fertod_inet_VLAN2
+ no ip address
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+ shutdown
+!
+interface Vlan210
+ description VLAN_E6000_Gyor#3_TelekomRIP
+ ip address 192.168.243.41 255.255.255.252
+!
+interface Vlan211
+ description VLAN_E6000_Gyor#3_VidanetRIP
+ ip address 192.168.243.45 255.255.255.252
+!
+interface Vlan212
+ description VLAN_E6000_Gyor#2_L2
+ ip address 192.168.251.225 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan213
+ description VLAN_E6000_Gyor1_L2
+ ip address 192.168.251.65 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan214
+ description VLAN_E6000_Gyor#3_PBR_NAT
+ ip address 192.168.251.113 255.255.255.240
+!
+interface Vlan215
+ description VL_Csorna_internet
+ ip address 192.168.254.49 255.255.255.240
+ ip policy route-map rm-CsornaNAT-src-route
+!
+interface Vlan216
+ description VL_Kapuvar_internet
+ ip address 192.168.254.97 255.255.255.240
+ ip policy route-map rm-Kapuvar-NAT
+!
+interface Vlan217
+ description Fertod_inet_VLAN
+ ip address 192.168.254.17 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan219
+ description VLAN_Gyor_Teszt_CMTS
+ ip address 94.248.240.97 255.255.255.224 secondary
+ ip address 192.168.254.33 255.255.255.240
+ no ip redirects
+ ip policy route-map rm-THoV-src-route
+ ipv6 address 2A03:BF00:201:6::1/64
+ ipv6 nd ra suppress
+!
+interface Vlan222
+ description Fertod_DTV_RHE_management
+ ip address 172.16.106.1 255.255.255.224
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan223
+ description Csorna_DTV_RHE_management
+ ip address 172.16.103.129 255.255.255.128 secondary
+ ip address 172.16.105.193 255.255.255.224
+ no ip redirects
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan224
+ description Kapuvar_DTV_RHE_management
+ ip address 172.16.106.33 255.255.255.224
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan226
+ description OLD_VLAN_BSR64k_Gyor#3_L4
+ no ip address
+ no ip redirects
+ shutdown
+!
+interface Vlan227
+ description Gyor-Csorna-NATolt
+ ip address 192.168.248.1 255.255.255.252
+ ip route-cache policy
+ ip policy route-map rm-CsornaNAT-src-route
+!
+interface Vlan228
+ description Otteveny_DTV_RHE_management
+ ip address 172.16.106.65 255.255.255.224
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan229
+ description Fertod_inet_VLAN_2
+ ip address 192.168.254.65 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan231
+ description NAT_public_traffic_ASR1k2
+ ip address 192.168.254.245 255.255.255.252
+ no ip redirects
+ ip route-cache policy
+!
+interface Vlan232
+ description to_MSZM_Gyartelep
+ ip address 172.16.103.1 255.255.255.224 secondary
+ ip address 192.168.254.201 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan235
+ no ip address
+ no ip redirects
+!
+interface Vlan236
+ description NAT_traffic_to_ASR1k2
+ ip address 192.168.254.241 255.255.255.252
+ no ip redirects
+ ip route-cache policy
+!
+interface Vlan238
+ description VDN_RADIUS_LAN
+ ip address 145.236.100.185 255.255.255.248
+!
+interface Vlan239
+ description Gyor-Siofok_VLAN
+ ip address 192.168.254.113 255.255.255.240
+!
+interface Vlan240
+ description Gyor-Siofok_SSG5
+ no ip address
+!
+interface Vlan245
+ description VL_BevHiv_LL
+ ip address 10.200.10.3 255.255.255.0
+!
+interface Vlan247
+ description VLAN_E6000_Gyor#2_TelekomVRF
+ ip address 192.168.243.17 255.255.255.252
+!
+interface Vlan248
+ description VLAN_E6000_Gyor#1_TelekomVRF
+ ip address 192.168.243.21 255.255.255.252
+!
+interface Vlan252
+ description VLAN_E6000_Gyor#2_VidanetVRF
+ ip address 192.168.243.33 255.255.255.248 secondary
+ ip address 192.168.243.29 255.255.255.252
+ no ip redirects
+!
+interface Vlan253
+ description VLAN_E6000_Gyor#1_VidanetVRF
+ ip address 192.168.243.25 255.255.255.252
+!
+interface Vlan258
+ description Teszt_GPON_mgmt
+ ip address 192.168.248.37 255.255.255.252
+!
+interface Vlan259
+ description GPON_ZTE_inet
+ ip dhcp relay information trusted
+ ip address 94.248.218.193 255.255.255.224
+ ip helper-address 10.121.0.38
+ no ip redirects
+!
+interface Vlan260
+ description GPON_ZTE_MTA
+ ip dhcp relay information trusted
+ ip address 192.168.172.1 255.255.252.0
+ ip helper-address 10.121.0.38
+ arp timeout 3600
+!
+interface Vlan261
+ description GPON_ZTE_ONTmgmt
+ ip address 10.5.48.1 255.255.240.0
+!
+interface Vlan262
+ description VL_ZTE_GPON_inet
+ ip dhcp relay information trusted
+ ip address 46.251.17.1 255.255.255.0 secondary
+ ip address 46.251.31.129 255.255.255.128 secondary
+ ip address 79.121.8.1 255.255.255.0
+ ip helper-address 79.121.0.38
+ no ip redirects
+ arp timeout 3600
+!
+interface Vlan263
+ description VL_ZTE_GPON_mgmt
+ ip address 192.168.254.225 255.255.255.240
+ arp timeout 3600
+!
+interface Vlan264
+ description VL_ZTE_GPON_VoIP_Triotel
+ ip dhcp relay information trusted
+ ip address 192.168.164.1 255.255.252.0
+ ip helper-address 79.121.0.38
+ arp timeout 3600
+!
+interface Vlan268
+ description VLAN_E6000_Csorna#2_VidanetRIP
+ ip address 192.168.243.61 255.255.255.252
+!
+interface Vlan271
+ description VLAN_E6000_Csorna#1_VidanetRIP
+ ip address 192.168.243.77 255.255.255.252
+!
+interface Vlan272
+ description VL_VMware_management
+ ip address 192.168.73.1 255.255.255.0
+!
+interface Vlan279
+ description VL_GPON_ZTE_GyorHattyu_inet
+ ip dhcp relay information trusted
+ ip address 79.121.7.1 255.255.255.128
+ ip helper-address 79.121.0.38
+!
+interface Vlan280
+ description VL_GPON_ZTE_GyorHattyu_mgmt
+ ip address 192.168.248.49 255.255.255.240
+!
+interface Vlan281
+ description VL_GPON_ZTE_GyorHattyu_VoIP
+ ip address 192.168.184.1 255.255.252.0
+ ip helper-address 79.121.0.38
+!
+interface Vlan301
+ description VL_HBO_Go
+ ip address 79.121.1.193 255.255.255.248
+!
+interface Vlan302
+ description VL_Google_Global_Cache_node1
+ ip address 79.121.0.65 255.255.255.192
+!
+interface Vlan303
+ description VL_Google_Global_Cache_node2
+ ip address 94.248.240.225 255.255.255.224
+!
+interface Vlan401
+ description CSR1000V_teszt
+ ip address 192.168.250.177 255.255.255.240
+!
+interface Vlan460
+ description VDN_Triotel_VoIP_BIX
+ ip address 10.89.89.15 255.255.255.0
+ ip access-group Triotel_private out
+!
+interface Vlan463
+ description NAT_traffic_to_ASR1k1
+ ip address 192.168.243.73 255.255.255.252
+!
+interface Vlan464
+ description NAT_public_traffic_ASR1k1
+ ip address 192.168.243.69 255.255.255.252
+!
+interface Vlan501
+ description Gyor-PH-INET
+ ip address 194.149.41.113 255.255.255.252
+!
+interface Vlan502
+ description Gyor-PH-VPN
+ ip address 192.168.144.5 255.255.255.252
+!
+interface Vlan505
+ description VL_VDN_Plaza_intra
+ ip address 94.248.240.153 255.255.255.248
+!
+interface Vlan506
+ description Gyor-Uszoda-LL
+ ip address 94.248.240.185 255.255.255.252
+!
+interface Vlan508
+ description VL_Comtech_TX_platfrm_mgmt
+ ip address 79.121.1.149 255.255.255.252
+!
+interface Vlan512
+ description VLAN_LL_Dozsa_palya
+ ip address 79.121.1.137 255.255.255.248
+!
+interface Vlan514
+ description LL_Gyo_DozsaPalya_TEMP_20180607
+ ip address 79.121.1.9 255.255.255.252
+!
+interface Vlan515
+ description LL_Gyo_DozsaPalya_TEMP_20180626
+ ip address 79.121.1.17 255.255.255.248
+!
+interface Vlan516
+ description LL_Gyo_TPSC_Kft
+ ip address 79.121.1.13 255.255.255.252
+!
+interface Vlan521
+ description VL_Gyor-Belvaros_FreeWifi
+ ip address 79.121.1.185 255.255.255.248
+!
+interface Vlan900
+ description VL_CQ_management
+ ip address 10.222.222.1 255.255.255.0
+!
+interface Vlan901
+ ip address 192.168.72.1 255.255.255.0
+!
+interface Vlan1000
+ description Toti_teszt_speed
+ ip address 194.149.41.249 255.255.255.248
+!
+interface Vlan2000
+ description VL_Harkany_RHE
+ ip address 172.16.106.129 255.255.255.224
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan2014
+ description VL_Internet_30GE_main
+ ip address 145.236.116.78 255.255.255.252
+ no ip redirects
+!
+interface Vlan2015
+ description TCom_RADIUS
+ ip address 84.1.97.238 255.255.255.252
+!
+interface Vlan2020
+ description VL_Tata_internet
+ ip address 172.16.105.129 255.255.255.224 secondary
+ ip address 79.121.1.201 255.255.255.252 secondary
+ ip address 192.168.250.113 255.255.255.240 secondary
+ ip address 192.168.250.17 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan2022
+ description VL_Kaposvar_internet
+ ip address 192.168.251.49 255.255.255.240 secondary
+ ip address 172.16.105.1 255.255.255.128 secondary
+ ip address 192.168.254.249 255.255.255.252 secondary
+ ip address 192.168.254.253 255.255.255.252 secondary
+ ip address 192.168.250.49 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+ ip ospf priority 255
+!
+interface Vlan2023
+ description VL_Kaposvar_VDN_intra
+ ip address 79.121.0.153 255.255.255.248 secondary
+ ip address 192.168.253.1 255.255.255.240
+ no ip redirects
+!
+interface Vlan2024
+ description VL_Pecs_internet
+ ip address 79.121.0.145 255.255.255.248 secondary
+ ip address 172.16.105.161 255.255.255.224 secondary
+ ip address 192.168.250.33 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+ ip ospf priority 255
+!
+interface Vlan2026
+ description VL_Mosonmagyarovar_internet
+ ip address 169.254.4.254 255.255.255.0 secondary
+ ip address 192.168.251.1 255.255.255.240 secondary
+ ip address 172.16.105.225 255.255.255.224 secondary
+ ip address 192.168.251.161 255.255.255.240 secondary
+ ip address 192.168.250.1 255.255.255.240
+ no ip redirects
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route-noNAT
+ ip ospf priority 255
+!
+interface Vlan2029
+ description VL_Telekom_IPv6_main
+ no ip address
+ ipv6 address 2001:4C48:200:2A00::2:1/127
+!
+interface Vlan2098
+ description VL_DTV_THoV_Simulcrypt
+ no ip address
+!
+interface Vlan2100
+ description VL_Tcom_Movar_FixIP
+ ip address 192.168.248.41 255.255.255.252
+!
+interface Vlan2101
+ description VL_HTV_MC_Movar
+ ip address 10.255.255.1 255.255.255.0
+!
+interface Vlan2102
+ description VL_THoV_MT_traff_out_cust_main
+ ip address 145.236.116.69 255.255.255.254
+!
+interface Vlan2103
+ description VL_THoV_MT_traff_out_mgmt_main
+ ip address 145.236.116.71 255.255.255.254
+!
+interface Vlan2104
+ no ip address
+ shutdown
+!
+interface Vlan2105
+ description VL_Telekom_FixIP_customerts_main
+ ip address 46.107.17.249 255.255.255.254
+!
+interface Vlan2107
+ description VL_Harkany_internet
+ ip address 192.168.254.177 255.255.255.240
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan2110
+ description VL_PecsVTV_uplink
+ ip address 79.121.1.205 255.255.255.252
+!
+interface Vlan2124
+ description VL_Telekom_VoIP_main
+ ip address 81.183.204.18 255.255.255.252
+!
+interface Vlan2125
+ description VL_Siofok-MT
+ ip address 192.168.248.9 255.255.255.248
+ ip route-cache policy
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan2126
+ description Siofok_RHE
+ ip address 172.16.106.225 255.255.255.224 secondary
+ ip address 172.16.106.193 255.255.255.224
+ no ip redirects
+ ip policy route-map rm-THoV-src-route
+!
+interface Vlan2127
+ description Gyor-Siofok_SSG5
+ ip address 94.248.240.189 255.255.255.252
+!
+interface Vlan2129
+ description VLAN_E6000_Movar_VDNVRF
+ ip address 192.168.243.57 255.255.255.252
+!
+interface Vlan2130
+ description VLAN_E6000_Kapos_TelekomVRF
+ ip address 192.168.243.49 255.255.255.252
+!
+interface Vlan2131
+ description VLAN_E6000_Kapos_VDNVRF
+ ip address 192.168.243.53 255.255.255.252
+!
+interface Vlan2214
+ description VL_Internet_30GE_spare
+ ip address 84.1.97.214 255.255.255.252
+!
+interface Vlan2229
+ description VL_Telekom_IPv6_spare
+ no ip address
+ ipv6 address 2001:4C48:200:2B00::1:1/127
+!
+interface Vlan2302
+ description VL_THoV_MT_traff_out_cust_spare
+ ip address 145.236.92.97 255.255.255.254
+!
+interface Vlan2303
+ description VL_THoV_MT_traff_out_mgmt_spare
+ ip address 84.1.237.125 255.255.255.254
+!
+interface Vlan2305
+ description VL_Telekom_FixIP_customerts_spare
+ ip address 46.107.17.59 255.255.255.254
+!
+interface Vlan2324
+ description VL_Telekom_VoIP_spare
+ ip address 81.183.204.21 255.255.255.254
+!
+interface Vlan2453
+ description VLAN_BSR2k_Keszu
+ ip address 192.168.250.145 255.255.255.240
+!
+interface Vlan2600
+ description VL_VDN-HFC-MCpeering
+ no ip address
+ no ip redirects
+!
+interface Vlan2601
+ description VL_ITV_HCF_CX
+ ip address 172.18.1.1 255.255.255.0
+!
+interface Vlan2602
+ description VL_ITV_HCF_MGMT
+ ip address 192.168.140.1 255.255.255.0
+!
+interface Vlan2603
+ description VL_Vidanet_Move_uplink
+ ip address 94.248.240.193 255.255.255.240
+!
+interface Vlan2800
+ description VL_PORION_Management_Devices
+ ip address 172.31.1.1 255.255.255.0
+!
+interface Vlan2924
+ description VL_PORION_Network_Management
+ ip address 10.172.1.2 255.255.255.0
+!
+interface Vlan3000
+ description VL_RemotePHY_teszt
+ ip address 172.20.220.253 255.255.255.0
+ no ip redirects
+ ipv6 address FC00:0:0:3000::1/64
+ ipv6 nd ra suppress
+!
+router ospf 1
+ router-id 79.121.0.1
+ network 192.168.243.17 0.0.0.0 area 0
+ network 192.168.243.21 0.0.0.0 area 0
+ network 192.168.243.25 0.0.0.0 area 0
+ network 192.168.243.29 0.0.0.0 area 0
+ network 192.168.243.41 0.0.0.0 area 0
+ network 192.168.243.45 0.0.0.0 area 0
+ network 192.168.243.49 0.0.0.0 area 0
+ network 192.168.243.53 0.0.0.0 area 0
+ network 192.168.243.57 0.0.0.0 area 0
+ network 192.168.243.61 0.0.0.0 area 0
+ network 192.168.243.77 0.0.0.0 area 0
+ network 192.168.248.41 0.0.0.0 area 0
+ network 192.168.250.1 0.0.0.0 area 0
+ network 192.168.250.33 0.0.0.0 area 0
+ network 192.168.250.49 0.0.0.0 area 0
+ network 192.168.250.65 0.0.0.0 area 0
+ network 192.168.250.161 0.0.0.0 area 0
+ network 192.168.250.193 0.0.0.0 area 0
+ network 192.168.250.225 0.0.0.0 area 0
+!
+router bgp 43529
+ bgp router-id 84.1.97.214
+ bgp log-neighbor-changes
+ neighbor 2001:4C48:200:2A00::2:0 remote-as 5483
+ neighbor 2001:4C48:200:2A00::2:0 description T-Com-er0-IPv6
+ neighbor 2001:4C48:200:2B00::1:0 remote-as 5483
+ neighbor 2001:4C48:200:2B00::1:0 description T-Com-er1-IPv6
+ neighbor 46.107.17.58 remote-as 5483
+ neighbor 46.107.17.58 description THoV-T-FixIP-traffic2
+******************************************************
+                   ...
+******************************************************
+ neighbor 46.107.17.248 remote-as 5483
+ neighbor 46.107.17.248 description THoV-T-FixIP-traffic
+******************************************************
+                   ...
+******************************************************
+ neighbor 79.121.0.35 remote-as 65432
+ neighbor 79.121.0.80 remote-as 65535
+ neighbor 79.121.0.80 description Google_Global_Cache_node1
+ neighbor 79.121.0.80 transport connection-mode passive
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 81.183.204.17 remote-as 5483
+ neighbor 81.183.204.17 description VDN-VoIP-traffic
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 81.183.204.20 remote-as 5483
+ neighbor 81.183.204.20 description VDN-VoIP-traffic2
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 84.1.97.213 remote-as 5483
+ neighbor 84.1.97.213 description T-Com-er0-gyor-verseny
+ neighbor 84.1.237.124 remote-as 5483
+ neighbor 84.1.237.124 description THoV_mgmt_traff_out2
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 94.248.240.254 remote-as 11344
+ neighbor 94.248.240.254 description Google_Global_Cache_node2
+ neighbor 94.248.240.254 transport connection-mode passive
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 145.236.92.96 remote-as 5483
+ neighbor 145.236.92.96 description THoV_global_traff_out2
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 145.236.116.68 remote-as 5483
+ neighbor 145.236.116.68 description THoV_global_traff_out
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 145.236.116.70 remote-as 5483
+ neighbor 145.236.116.70 description THoV_mgmt_traff_out
+ ******************************************************
+                   ...
+******************************************************
+ neighbor 145.236.116.77 remote-as 5483
+ neighbor 145.236.116.77 description T-Com-er0-gyor
+ !
+ address-family ipv4
+  network 10.50.0.0 mask 255.255.0.0
+  network 145.236.100.184 mask 255.255.255.248
+  redistribute static route-map bgp_enabled_routes
+  redistribute ospf 1 match internal external 1 external 2
+  no neighbor 2001:4C48:200:2A00::2:0 activate
+  no neighbor 2001:4C48:200:2B00::1:0 activate
+  no neighbor 46.107.17.58 activate
+  no neighbor 46.107.17.248 activate
+  neighbor 79.121.0.35 activate
+  neighbor 79.121.0.35 route-map rm-THoV-mgmt-in in
+  neighbor 79.121.0.35 route-map rm-THoV-mgmt-out out
+  neighbor 79.121.0.80 activate
+  neighbor 79.121.0.80 soft-reconfiguration inbound
+  neighbor 79.121.0.80 prefix-list deny-any in
+  neighbor 79.121.0.80 prefix-list VDN-IP-pool-wNAT out
+  neighbor 81.183.204.17 activate
+  neighbor 81.183.204.17 soft-reconfiguration inbound
+  neighbor 81.183.204.17 route-map rm-TCom-VoIP-in in
+  neighbor 81.183.204.17 route-map rm-TCom-VoIP-out out
+  neighbor 81.183.204.20 activate
+  neighbor 81.183.204.20 soft-reconfiguration inbound
+  neighbor 81.183.204.20 route-map rm-TCom-VoIP-in in
+  neighbor 81.183.204.20 route-map rm-TCom-VoIP-out out
+  neighbor 84.1.97.213 activate
+  neighbor 84.1.97.213 soft-reconfiguration inbound
+  neighbor 84.1.97.213 route-map tcom-in-spare in
+  neighbor 84.1.97.213 route-map tcom-out-spare out
+  neighbor 84.1.237.124 activate
+  neighbor 84.1.237.124 soft-reconfiguration inbound
+  neighbor 84.1.237.124 route-map rm-THoV-mgmt-in in
+  neighbor 84.1.237.124 route-map rm-THoV-mgmt-out out
+  neighbor 94.248.240.254 activate
+  neighbor 94.248.240.254 soft-reconfiguration inbound
+  neighbor 94.248.240.254 prefix-list deny-any in
+  neighbor 94.248.240.254 prefix-list VDN-IP-pool-wNAT out
+  neighbor 145.236.92.96 activate
+  neighbor 145.236.92.96 soft-reconfiguration inbound
+  neighbor 145.236.92.96 route-map rm-THoV-global-in in
+  neighbor 145.236.92.96 route-map rm-THoV-global-out out
+  neighbor 145.236.116.68 activate
+  neighbor 145.236.116.68 soft-reconfiguration inbound
+  neighbor 145.236.116.68 route-map rm-THoV-global-in in
+  neighbor 145.236.116.68 route-map rm-THoV-global-out out
+  neighbor 145.236.116.70 activate
+  neighbor 145.236.116.70 soft-reconfiguration inbound
+  neighbor 145.236.116.70 route-map rm-THoV-mgmt-in in
+  neighbor 145.236.116.70 route-map rm-THoV-mgmt-out out
+  neighbor 145.236.116.77 activate
+  neighbor 145.236.116.77 soft-reconfiguration inbound
+  neighbor 145.236.116.77 route-map tcom-in-main in
+  neighbor 145.236.116.77 route-map tcom-out-main out
+  maximum-paths 2
+ exit-address-family
+ !
+ address-family ipv6
+  network 2A03:BF00:200::/40
+  neighbor 2001:4C48:200:2A00::2:0 activate
+  neighbor 2001:4C48:200:2A00::2:0 soft-reconfiguration inbound
+  neighbor 2001:4C48:200:2B00::1:0 activate
+  neighbor 2001:4C48:200:2B00::1:0 soft-reconfiguration inbound
+ exit-address-family
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+ip as-path access-list 10 permit ^$
+ip as-path access-list 20 permit ^5483$
+******************************************************
+                   ...
+******************************************************
+ip route 10.0.0.0 255.255.0.0 192.168.250.2
+ip route 10.2.0.0 255.255.0.0 192.168.250.56
+ip route 10.3.0.0 255.255.224.0 192.168.250.226
+ip route 10.4.0.0 255.255.0.0 192.168.250.66
+ip route 10.4.0.0 255.255.0.0 192.168.251.66
+ip route 10.5.8.0 255.255.248.0 192.168.254.3
+ip route 10.5.16.0 255.255.248.0 192.168.254.18
+ip route 10.5.32.0 255.255.240.0 192.168.254.98
+ip route 10.5.64.0 255.255.240.0 192.168.254.180
+ip route 10.5.80.0 255.255.240.0 192.168.254.50
+ip route 10.5.96.0 255.255.240.0 192.168.254.34
+ip route 10.5.112.0 255.255.240.0 192.168.248.11
+ip route 10.5.128.0 255.255.240.0 192.168.248.11
+ip route 10.5.144.0 255.255.240.0 192.168.248.11
+ip route 10.5.160.0 255.255.240.0 192.168.248.11
+ip route 10.5.176.0 255.255.240.0 192.168.248.11
+ip route 10.5.192.0 255.255.255.0 192.168.248.11
+ip route 10.5.208.0 255.255.240.0 192.168.254.50
+ip route 10.6.0.0 255.255.0.0 192.168.250.22
+ip route 10.7.0.0 255.255.0.0 192.168.250.34
+ip route 10.10.0.0 255.255.128.0 192.168.250.194
+ip route 10.11.0.0 255.255.0.0 192.168.250.58
+ip route 10.12.0.0 255.255.248.0 192.168.254.2
+ip route 10.12.32.0 255.255.248.0 192.168.254.203
+ip route 10.12.64.0 255.255.224.0 192.168.254.50
+ip route 10.13.0.0 255.255.248.0 192.168.250.242
+ip route 10.14.0.0 255.255.0.0 192.168.250.226
+ip route 10.15.0.0 255.255.0.0 192.168.250.3
+ip route 10.19.0.0 255.255.0.0 79.121.0.19
+ip route 10.22.0.0 255.255.255.0 79.121.0.11
+ip route 10.50.0.0 255.255.0.0 Null0
+ip route 10.50.0.0 255.255.248.0 192.168.250.66
+ip route 10.50.0.0 255.255.248.0 192.168.251.66
+ip route 10.50.8.0 255.255.248.0 192.168.250.66
+ip route 10.50.8.0 255.255.248.0 192.168.251.66
+ip route 10.50.16.0 255.255.248.0 192.168.250.3
+ip route 10.50.24.0 255.255.252.0 192.168.250.22
+ip route 10.50.28.0 255.255.255.0 192.168.248.11
+ip route 10.50.29.0 255.255.255.0 192.168.254.34
+ip route 10.50.31.0 255.255.255.0 192.168.248.11
+ip route 10.50.32.0 255.255.248.0 192.168.250.22
+ip route 10.50.40.0 255.255.248.0 192.168.250.56
+ip route 10.50.48.0 255.255.252.0 192.168.250.34
+ip route 10.50.52.0 255.255.255.0 192.168.254.203
+ip route 10.50.53.0 255.255.255.0 192.168.254.180
+ip route 10.50.54.0 255.255.254.0 192.168.250.34
+ip route 10.50.56.0 255.255.248.0 192.168.250.194
+ip route 10.50.64.0 255.255.252.0 192.168.254.18
+ip route 10.50.68.0 255.255.255.0 192.168.254.50
+ip route 10.50.69.0 255.255.255.0 192.168.254.180
+ip route 10.50.70.0 255.255.254.0 192.168.248.11
+ip route 10.50.72.0 255.255.248.0 192.168.250.3
+ip route 10.50.80.0 255.255.248.0 192.168.250.58
+ip route 10.50.88.0 255.255.248.0 192.168.250.3
+ip route 10.50.96.0 255.255.248.0 192.168.250.56
+ip route 10.50.104.0 255.255.248.0 192.168.250.226
+ip route 10.50.112.0 255.255.248.0 192.168.250.56
+ip route 10.50.120.0 255.255.248.0 192.168.250.66
+ip route 10.50.120.0 255.255.248.0 192.168.251.66
+ip route 10.50.128.0 255.255.248.0 192.168.250.66
+ip route 10.50.128.0 255.255.248.0 192.168.251.66
+ip route 10.50.136.0 255.255.248.0 192.168.250.226
+ip route 10.50.144.0 255.255.248.0 192.168.250.226
+ip route 10.50.152.0 255.255.248.0 192.168.250.226
+ip route 10.50.160.0 255.255.248.0 192.168.250.56
+ip route 10.50.168.0 255.255.248.0 192.168.250.56
+ip route 10.50.176.0 255.255.240.0 192.168.250.3
+ip route 10.50.192.0 255.255.252.0 192.168.254.3
+ip route 10.50.196.0 255.255.252.0 192.168.250.194
+ip route 10.50.200.0 255.255.248.0 192.168.248.11
+ip route 10.50.208.0 255.255.240.0 192.168.254.50
+ip route 10.50.224.0 255.255.248.0 192.168.254.50
+ip route 10.50.232.0 255.255.248.0 192.168.254.98
+ip route 10.50.240.0 255.255.248.0 192.168.248.11
+ip route 10.50.252.0 255.255.252.0 192.168.248.11
+ip route 10.64.0.0 255.255.0.0 192.168.248.11
+ip route 10.100.0.0 255.255.248.0 192.168.250.210
+ip route 10.222.0.0 255.255.240.0 192.168.250.66
+ip route 10.222.0.0 255.255.240.0 192.168.251.66
+ip route 10.232.165.128 255.255.255.128 Null0 tag 430
+ip route 10.232.165.128 255.255.255.252 192.168.250.66 tag 230
+ip route 10.232.165.128 255.255.255.252 192.168.251.66
+ip route 10.232.165.136 255.255.255.252 192.168.250.194
+ip route 10.232.165.140 255.255.255.252 192.168.250.226 tag 230
+ip route 10.232.165.148 255.255.255.252 192.168.250.56 tag 230
+ip route 10.232.165.152 255.255.255.252 192.168.250.2 tag 230
+ip route 10.232.165.156 255.255.255.252 192.168.250.22 tag 230
+ip route 10.232.165.160 255.255.255.252 192.168.250.34 tag 230
+ip route 10.232.165.164 255.255.255.252 192.168.250.162 tag 230
+ip route 10.232.165.168 255.255.255.252 192.168.250.58 tag 230
+ip route 10.232.165.172 255.255.255.252 192.168.250.3 tag 230
+ip route 10.232.165.176 255.255.255.252 192.168.254.34 tag 230
+ip route 10.234.128.0 255.255.128.0 Null0 tag 400
+ip route 10.234.128.0 255.255.248.0 192.168.250.56
+ip route 10.234.136.0 255.255.248.0 192.168.250.56 tag 200
+ip route 10.234.144.0 255.255.254.0 192.168.250.3
+ip route 10.234.148.0 255.255.254.0 192.168.250.34 tag 200
+ip route 10.234.158.0 255.255.254.0 192.168.250.2 tag 200
+ip route 10.234.162.0 255.255.254.0 192.168.250.58
+ip route 10.234.164.0 255.255.252.0 192.168.250.22
+ip route 10.234.168.0 255.255.252.0 192.168.250.3
+ip route 10.234.172.0 255.255.252.0 192.168.250.194
+ip route 10.234.176.0 255.255.252.0 192.168.250.66
+ip route 10.234.176.0 255.255.252.0 192.168.251.66
+ip route 10.234.180.0 255.255.252.0 192.168.250.226
+ip route 10.234.188.0 255.255.252.0 192.168.250.3
+ip route 10.234.192.0 255.255.248.0 192.168.250.226 tag 200
+ip route 10.234.200.0 255.255.248.0 192.168.250.66
+ip route 10.234.200.0 255.255.248.0 192.168.251.66
+ip route 10.234.208.0 255.255.255.0 192.168.254.34
+ip route 10.237.0.0 255.255.192.0 192.168.248.11
+ip route 10.242.128.0 255.255.128.0 Null0 tag 410
+ip route 10.242.128.0 255.255.252.0 192.168.250.56
+ip route 10.242.132.0 255.255.254.0 192.168.250.66 tag 210
+ip route 10.242.132.0 255.255.254.0 192.168.251.66
+ip route 10.242.134.0 255.255.254.0 192.168.250.66
+ip route 10.242.134.0 255.255.254.0 192.168.251.66
+ip route 10.242.136.0 255.255.252.0 192.168.250.56 tag 210
+ip route 10.242.140.0 255.255.254.0 192.168.250.194
+ip route 10.242.142.0 255.255.254.0 192.168.250.226 tag 210
+ip route 10.242.144.0 255.255.254.0 192.168.250.3
+ip route 10.242.146.0 255.255.254.0 192.168.250.22 tag 210
+ip route 10.242.148.0 255.255.254.0 192.168.250.34 tag 210
+ip route 10.242.150.0 255.255.255.0 192.168.250.66 tag 210
+ip route 10.242.150.0 255.255.255.0 192.168.251.66
+ip route 10.242.151.0 255.255.255.0 192.168.250.22
+ip route 10.242.152.0 255.255.255.0 192.168.250.226 tag 210
+ip route 10.242.153.0 255.255.255.0 192.168.250.226 tag 210
+ip route 10.242.154.0 255.255.254.0 192.168.250.226
+ip route 10.242.156.0 255.255.254.0 192.168.250.58
+ip route 10.242.158.0 255.255.254.0 192.168.250.3 tag 200
+ip route 10.247.224.0 255.255.224.0 Null0 tag 400
+ip route 10.247.224.0 255.255.255.0 192.168.254.34
+ip route 10.250.0.0 255.255.255.128 192.168.248.11
+ip route 10.250.0.128 255.255.255.128 192.168.254.50
+ip route 46.107.244.0 255.255.252.0 Null0
+ip route 46.107.244.0 255.255.255.128 192.168.250.34
+ip route 46.107.246.0 255.255.255.0 192.168.250.3
+ip route 46.107.247.0 255.255.255.0 192.168.250.56
+ip route 46.107.248.0 255.255.254.0 192.168.250.22
+ip route 46.139.128.0 255.255.252.0 192.168.250.66
+ip route 46.139.128.0 255.255.252.0 192.168.251.66
+ip route 46.139.132.0 255.255.252.0 192.168.250.66
+ip route 46.139.132.0 255.255.252.0 192.168.251.66
+ip route 46.139.136.0 255.255.252.0 192.168.250.226
+ip route 46.139.140.0 255.255.252.0 192.168.250.194
+ip route 46.139.144.0 255.255.252.0 192.168.250.56
+ip route 46.139.148.0 255.255.252.0 192.168.250.56
+ip route 46.139.152.0 255.255.252.0 192.168.250.3
+ip route 46.251.8.0 255.255.248.0 192.168.248.11
+ip route 46.251.16.0 255.255.240.0 Null0 tag 320
+ip route 46.251.16.0 255.255.255.0 192.168.254.18
+ip route 46.251.17.0 255.255.255.0 192.168.250.194
+ip route 46.251.18.0 255.255.255.0 192.168.250.56
+ip route 46.251.19.0 255.255.255.0 192.168.250.194
+ip route 46.251.20.0 255.255.255.0 192.168.250.3
+ip route 46.251.21.0 255.255.255.0 192.168.250.3
+ip route 46.251.22.0 255.255.255.0 192.168.250.226
+ip route 46.251.23.0 255.255.255.0 192.168.250.66
+ip route 46.251.23.0 255.255.255.0 192.168.251.66
+ip route 46.251.24.0 255.255.255.0 192.168.250.34
+ip route 46.251.25.0 255.255.255.0 192.168.254.3
+ip route 46.251.26.0 255.255.255.0 192.168.254.18
+ip route 46.251.27.0 255.255.255.0 192.168.250.226
+ip route 46.251.28.0 255.255.255.0 192.168.250.66
+ip route 46.251.28.0 255.255.255.0 192.168.251.66
+ip route 46.251.29.0 255.255.255.128 192.168.250.3
+ip route 46.251.29.128 255.255.255.128 192.168.250.3
+ip route 46.251.30.0 255.255.255.0 192.168.254.3
+ip route 46.251.31.0 255.255.255.128 192.168.254.98
+ip route 62.201.118.64 255.255.255.240 192.168.254.34
+ip route 78.92.176.0 255.255.254.0 192.168.250.22
+ip route 79.121.0.0 255.255.192.0 Null0 tag 320
+ip route 79.121.0.128 255.255.255.248 192.168.250.3
+ip route 79.121.0.136 255.255.255.248 192.168.250.22
+ip route 79.121.0.160 255.255.255.248 192.168.254.3
+ip route 79.121.0.176 255.255.255.248 192.168.250.56
+ip route 79.121.0.184 255.255.255.248 192.168.250.226
+ip route 79.121.0.224 255.255.255.248 192.168.250.226
+ip route 79.121.0.232 255.255.255.248 192.168.250.56
+ip route 79.121.0.240 255.255.255.248 192.168.250.56
+ip route 79.121.0.248 255.255.255.248 192.168.250.194
+ip route 79.121.1.64 255.255.255.192 194.149.41.114
+ip route 79.121.1.128 255.255.255.248 192.168.250.3
+ip route 79.121.1.144 255.255.255.252 192.168.250.62
+ip route 79.121.1.152 255.255.255.248 192.168.250.46
+ip route 79.121.1.160 255.255.255.248 192.168.250.66
+ip route 79.121.1.160 255.255.255.248 192.168.251.66
+ip route 79.121.1.168 255.255.255.248 192.168.250.56
+ip route 79.121.1.176 255.255.255.248 192.168.250.226
+ip route 79.121.1.208 255.255.255.248 192.168.250.3
+ip route 79.121.1.216 255.255.255.248 192.168.250.3
+ip route 79.121.1.224 255.255.255.240 192.168.250.226
+ip route 79.121.1.240 255.255.255.248 192.168.250.34
+ip route 79.121.1.248 255.255.255.248 192.168.250.3
+ip route 79.121.2.0 255.255.254.0 192.168.254.50
+ip route 79.121.4.0 255.255.254.0 192.168.250.66
+ip route 79.121.4.0 255.255.254.0 192.168.251.66
+ip route 79.121.6.0 255.255.255.0 192.168.248.11
+ip route 79.121.9.0 255.255.255.128 192.168.248.11
+ip route 79.121.9.128 255.255.255.128 192.168.254.98
+ip route 79.121.10.0 255.255.254.0 192.168.250.66
+ip route 79.121.10.0 255.255.254.0 192.168.251.66
+ip route 79.121.12.0 255.255.254.0 192.168.250.226
+ip route 79.121.14.0 255.255.254.0 192.168.250.56
+ip route 79.121.16.0 255.255.254.0 192.168.250.226
+ip route 79.121.18.0 255.255.254.0 192.168.250.226
+ip route 79.121.20.0 255.255.254.0 192.168.250.226
+ip route 79.121.22.0 255.255.254.0 192.168.250.3
+ip route 79.121.32.0 255.255.252.0 192.168.250.66
+ip route 79.121.32.0 255.255.252.0 192.168.251.66
+ip route 79.121.36.0 255.255.254.0 192.168.250.3
+ip route 79.121.38.0 255.255.255.0 192.168.250.226
+ip route 79.121.39.0 255.255.255.128 192.168.254.18
+ip route 79.121.39.128 255.255.255.128 192.168.250.3
+ip route 79.121.40.0 255.255.248.0 192.168.254.246
+ip route 79.121.48.0 255.255.255.0 192.168.250.34
+ip route 79.121.49.0 255.255.255.0 192.168.250.22
+ip route 79.121.50.0 255.255.254.0 192.168.250.34
+ip route 79.121.52.0 255.255.255.0 192.168.254.50
+ip route 79.121.53.0 255.255.255.0 192.168.250.226
+ip route 79.121.54.0 255.255.255.0 192.168.250.56
+ip route 79.121.55.0 255.255.255.0 192.168.250.66
+ip route 79.121.55.0 255.255.255.0 192.168.251.66
+ip route 79.121.56.0 255.255.254.0 192.168.250.226
+ip route 79.121.58.0 255.255.254.0 192.168.250.226
+ip route 79.121.60.0 255.255.255.0 192.168.250.226
+ip route 79.121.61.0 255.255.255.0 192.168.250.226
+ip route 79.121.62.0 255.255.255.0 192.168.250.46
+ip route 79.121.63.0 255.255.255.128 192.168.250.3
+ip route 79.121.63.128 255.255.255.192 192.168.254.3
+ip route 79.121.63.192 255.255.255.192 192.168.254.3
+ip route 79.121.64.0 255.255.248.0 Null0
+ip route 79.121.64.0 255.255.252.0 192.168.248.11
+ip route 79.121.68.0 255.255.254.0 192.168.248.11
+ip route 79.121.70.0 255.255.254.0 192.168.254.34
+ip route 79.121.88.0 255.255.248.0 192.168.248.11
+ip route 82.141.138.192 255.255.255.224 192.168.254.50
+ip route 84.1.16.0 255.255.252.0 192.168.250.226 tag 220
+ip route 84.183.244.202 255.255.255.255 145.236.116.68
+ip route 86.59.150.0 255.255.254.0 192.168.250.3
+ip route 94.248.128.0 255.255.224.0 Null0 tag 320
+ip route 94.248.128.0 255.255.255.0 192.168.250.226
+ip route 94.248.129.0 255.255.255.0 192.168.250.226
+ip route 94.248.130.0 255.255.255.128 192.168.254.3
+ip route 94.248.130.128 255.255.255.128 192.168.254.3
+ip route 94.248.131.0 255.255.255.0 192.168.250.226
+ip route 94.248.132.0 255.255.252.0 192.168.250.194
+ip route 94.248.136.0 255.255.255.0 192.168.250.34
+ip route 94.248.137.0 255.255.255.0 192.168.250.3
+ip route 94.248.138.0 255.255.254.0 192.168.250.3
+ip route 94.248.140.0 255.255.254.0 192.168.254.98
+ip route 94.248.142.0 255.255.254.0 192.168.254.50
+ip route 94.248.144.0 255.255.248.0 192.168.243.70
+ip route 94.248.144.0 255.255.252.0 192.168.243.70
+ip route 94.248.148.0 255.255.252.0 192.168.243.70
+ip route 94.248.152.0 255.255.254.0 192.168.254.50
+ip route 94.248.154.0 255.255.255.128 192.168.250.3
+ip route 94.248.154.128 255.255.255.128 192.168.250.3
+ip route 94.248.155.0 255.255.255.192 192.168.250.66
+ip route 94.248.155.0 255.255.255.192 192.168.251.66
+ip route 94.248.155.64 255.255.255.192 192.168.250.34
+ip route 94.248.155.128 255.255.255.192 192.168.254.3
+ip route 94.248.155.192 255.255.255.192 192.168.254.3
+ip route 94.248.156.0 255.255.254.0 192.168.254.50
+ip route 94.248.158.0 255.255.254.0 192.168.250.3
+ip route 94.248.192.0 255.255.224.0 Null0 tag 320
+ip route 94.248.192.0 255.255.252.0 192.168.254.180
+ip route 94.248.196.0 255.255.252.0 192.168.250.194
+ip route 94.248.200.0 255.255.252.0 192.168.250.56
+ip route 94.248.204.0 255.255.252.0 192.168.254.50
+ip route 94.248.208.0 255.255.254.0 192.168.250.226
+ip route 94.248.210.0 255.255.254.0 192.168.250.22
+ip route 94.248.212.0 255.255.254.0 192.168.250.56
+ip route 94.248.214.0 255.255.255.128 192.168.254.98
+ip route 94.248.214.128 255.255.255.128 192.168.250.66
+ip route 94.248.215.0 255.255.255.192 192.168.250.3
+ip route 94.248.215.64 255.255.255.192 192.168.254.34
+ip route 94.248.215.128 255.255.255.192 192.168.248.11
+ip route 94.248.215.192 255.255.255.192 192.168.250.66
+ip route 94.248.215.192 255.255.255.192 192.168.251.66
+ip route 94.248.216.0 255.255.255.0 192.168.254.180
+ip route 94.248.217.0 255.255.255.0 192.168.250.3
+ip route 94.248.218.0 255.255.255.128 192.168.250.226
+ip route 94.248.218.128 255.255.255.192 192.168.248.11
+ip route 94.248.219.0 255.255.255.0 192.168.250.22
+ip route 94.248.220.0 255.255.255.128 192.168.250.56
+ip route 94.248.220.128 255.255.255.128 192.168.250.3
+ip route 94.248.221.0 255.255.255.128 192.168.254.3
+ip route 94.248.221.128 255.255.255.128 192.168.250.226
+ip route 94.248.222.0 255.255.254.0 192.168.254.50
+ip route 94.248.240.0 255.255.248.0 Null0 tag 320
+ip route 94.248.240.0 255.255.255.224 192.168.254.50
+ip route 94.248.240.32 255.255.255.224 192.168.254.50
+ip route 94.248.240.64 255.255.255.224 192.168.254.98
+ip route 94.248.240.144 255.255.255.248 192.168.250.56
+ip route 94.248.240.160 255.255.255.248 192.168.250.226
+ip route 94.248.240.168 255.255.255.248 192.168.250.3
+ip route 94.248.240.176 255.255.255.248 192.168.250.226
+ip route 94.248.240.208 255.255.255.240 192.168.248.11
+ip route 94.248.241.0 255.255.255.0 192.168.250.66
+ip route 94.248.241.0 255.255.255.0 192.168.251.66
+ip route 94.248.242.0 255.255.254.0 192.168.254.98
+ip route 94.248.244.0 255.255.255.0 192.168.254.98
+ip route 94.248.245.0 255.255.255.0 192.168.250.56
+ip route 94.248.246.0 255.255.255.0 192.168.250.3
+ip route 94.248.246.138 255.255.255.255 Null0
+ip route 94.248.247.0 255.255.255.0 192.168.254.18
+ip route 95.171.76.0 255.255.255.0 192.168.250.98
+ip route 100.64.0.0 255.192.0.0 Null0
+ip route 100.64.0.0 255.255.252.0 192.168.250.66
+ip route 100.64.0.0 255.255.252.0 192.168.251.66
+ip route 100.64.4.0 255.255.252.0 192.168.250.66
+ip route 100.64.4.0 255.255.252.0 192.168.251.66
+ip route 100.64.8.0 255.255.252.0 192.168.250.226
+ip route 100.64.12.0 255.255.252.0 192.168.250.226
+ip route 100.64.16.0 255.255.255.0 192.168.254.34
+ip route 100.64.20.0 255.255.252.0 192.168.248.11
+ip route 100.64.24.0 255.255.252.0 192.168.250.3
+ip route 100.64.28.0 255.255.252.0 192.168.250.3
+ip route 100.64.32.0 255.255.252.0 192.168.250.56
+ip route 100.64.36.0 255.255.252.0 192.168.250.56
+ip route 100.64.40.0 255.255.252.0 192.168.250.66
+ip route 100.64.40.0 255.255.252.0 192.168.251.66
+ip route 100.64.44.0 255.255.252.0 192.168.250.22
+ip route 100.64.48.0 255.255.252.0 192.168.250.34
+ip route 100.64.52.0 255.255.252.0 192.168.254.3
+ip route 100.64.56.0 255.255.252.0 192.168.254.180
+ip route 100.64.60.0 255.255.252.0 192.168.254.18
+ip route 100.64.68.0 255.255.252.0 192.168.254.203
+ip route 100.64.72.0 255.255.252.0 192.168.250.226
+ip route 100.64.76.0 255.255.252.0 192.168.248.2
+ip route 100.64.80.0 255.255.252.0 192.168.248.2
+ip route 100.64.84.0 255.255.252.0 192.168.248.11
+ip route 100.64.88.0 255.255.252.0 192.168.248.11
+ip route 100.64.92.0 255.255.252.0 192.168.248.11
+ip route 100.64.96.0 255.255.252.0 192.168.250.56
+ip route 100.64.100.0 255.255.252.0 192.168.250.226
+ip route 100.64.104.0 255.255.252.0 192.168.254.180
+ip route 100.64.108.0 255.255.252.0 192.168.250.56
+ip route 100.64.112.0 255.255.252.0 192.168.250.22
+ip route 100.64.116.0 255.255.252.0 192.168.250.226
+ip route 100.64.120.0 255.255.252.0 192.168.250.66
+ip route 100.64.120.0 255.255.252.0 192.168.251.66
+ip route 100.64.124.0 255.255.252.0 192.168.248.2
+ip route 100.64.128.0 255.255.252.0 192.168.250.3
+ip route 100.64.132.0 255.255.252.0 192.168.248.2
+ip route 100.64.136.0 255.255.252.0 192.168.250.194
+ip route 100.64.140.0 255.255.252.0 192.168.250.194
+ip route 100.64.144.0 255.255.252.0 192.168.250.194
+ip route 100.64.148.0 255.255.252.0 192.168.250.3
+ip route 100.64.152.0 255.255.252.0 192.168.250.66
+ip route 100.64.156.0 255.255.252.0 192.168.248.11
+ip route 100.64.160.0 255.255.252.0 192.168.250.56
+ip route 100.64.164.0 255.255.252.0 192.168.250.226
+ip route 100.64.168.0 255.255.252.0 192.168.250.3
+ip route 100.64.172.0 255.255.252.0 192.168.250.34
+ip route 100.64.176.0 255.255.252.0 192.168.248.2
+ip route 100.64.180.0 255.255.252.0 192.168.250.66
+ip route 100.64.180.0 255.255.252.0 192.168.251.66
+ip route 100.64.184.0 255.255.252.0 192.168.250.226
+ip route 100.64.188.0 255.255.252.0 192.168.250.194
+ip route 100.64.192.0 255.255.252.0 192.168.250.3
+ip route 100.64.196.0 255.255.252.0 192.168.250.56
+ip route 100.64.200.0 255.255.252.0 192.168.254.50
+ip route 100.64.204.0 255.255.252.0 192.168.254.98
+ip route 100.64.208.0 255.255.252.0 192.168.250.66
+ip route 100.64.208.0 255.255.252.0 192.168.251.66
+ip route 100.64.212.0 255.255.252.0 192.168.248.11
+ip route 100.64.216.0 255.255.252.0 192.168.250.56
+ip route 100.64.220.0 255.255.252.0 192.168.248.11
+ip route 100.64.224.0 255.255.252.0 192.168.250.66
+ip route 100.64.228.0 255.255.252.0 192.168.250.66
+ip route 100.64.232.0 255.255.252.0 192.168.250.66
+ip route 100.64.236.0 255.255.252.0 192.168.250.3
+ip route 100.64.240.0 255.255.252.0 192.168.254.3
+ip route 100.64.244.0 255.255.252.0 192.168.250.22
+ip route 100.64.248.0 255.255.252.0 192.168.250.226
+ip route 100.64.252.0 255.255.252.0 192.168.248.2
+ip route 145.236.25.0 255.255.255.0 192.168.250.2
+ip route 145.236.35.192 255.255.255.192 192.168.250.2 tag 220
+ip route 145.236.48.0 255.255.255.0 192.168.250.66
+ip route 145.236.48.0 255.255.255.0 192.168.251.66
+ip route 145.236.49.0 255.255.255.0 Null0
+ip route 145.236.49.0 255.255.255.128 192.168.250.66
+ip route 145.236.49.0 255.255.255.128 192.168.251.66
+ip route 145.236.49.128 255.255.255.128 192.168.250.34
+ip route 145.236.100.184 255.255.255.248 Null0
+ip route 172.20.0.0 255.255.255.0 192.168.248.10
+ip route 172.20.210.0 255.255.255.0 192.168.140.2
+ip route 172.20.213.0 255.255.255.0 192.168.140.2
+ip route 172.31.15.0 255.255.255.0 192.168.248.11
+ip route 172.31.17.0 255.255.255.0 10.172.1.1
+ip route 172.31.248.0 255.255.248.0 10.172.1.1
+ip route 192.168.50.0 255.255.255.0 192.168.250.66
+ip route 192.168.51.0 255.255.255.0 192.168.250.66
+ip route 192.168.52.0 255.255.255.0 192.168.250.226
+ip route 192.168.70.0 255.255.255.0 79.121.0.11
+ip route 192.168.101.0 255.255.255.0 10.172.1.1
+ip route 192.168.149.0 255.255.255.0 192.168.144.6
+ip route 192.168.150.0 255.255.255.0 192.168.250.66
+ip route 192.168.151.0 255.255.255.0 192.168.250.66
+ip route 192.168.152.0 255.255.255.0 192.168.250.226
+ip route 192.168.153.0 255.255.255.0 192.168.250.226
+ip route 192.168.154.0 255.255.255.0 192.168.250.226
+ip route 192.168.160.0 255.255.255.0 192.168.254.50
+ip route 192.168.161.0 255.255.255.0 192.168.254.50
+ip route 192.168.162.0 255.255.255.0 192.168.254.98
+ip route 192.168.168.0 255.255.252.0 192.168.248.11
+ip route 192.168.176.0 255.255.252.0 192.168.248.11
+ip route 192.168.180.0 255.255.252.0 192.168.248.11
+ip route 192.168.199.0 255.255.255.0 79.121.0.15
+ip route 192.168.243.34 255.255.255.255 Vlan252
+ip route 192.168.248.16 255.255.255.240 192.168.254.50
+ip route 192.168.249.0 255.255.255.0 192.168.248.11
+ip route 192.168.254.80 255.255.255.240 192.168.254.50
+ip route 192.168.254.160 255.255.255.240 192.168.254.50
+ip route 194.149.41.0 255.255.255.0 Null0
+ip route 194.149.41.64 255.255.255.224 192.168.254.203
+ip route 194.149.52.0 255.255.255.0 Null0
+ip route 194.149.52.0 255.255.255.128 192.168.250.98
+ip route vrf VidanetFixIP 0.0.0.0 0.0.0.0 145.236.116.77 global
+ip ssh version 2
+ip scp server enable
+!
+ip access-list standard Management_IPs
+*******
+deny   any
+!
+ip access-list extended ICMP_TEST
+ permit icmp host 10.200.0.1 host 10.200.0.14 log
+ permit icmp host 10.200.0.1 host 10.200.0.15 log
+ permit icmp host 10.200.0.14 host 10.200.0.1 log-input
+ permit icmp host 10.200.0.15 host 10.200.0.1 log-input
+ permit ip any any
+ip access-list extended MovarDDOS
+ permit ip any 172.16.105.192 0.0.0.32
+ permit ip 172.16.105.192 0.0.0.32 any
+ip access-list extended MovarDDOS-169
+ permit ip any 169.254.4.0 0.0.0.255
+ permit ip 169.254.4.0 0.0.0.255 any
+ip access-list extended MovarDDOS-250
+ permit ip any 192.168.250.0 0.0.0.255
+ permit ip 192.168.250.0 0.0.0.255 any
+ip access-list extended MovarDDOS-251
+ permit ip 192.168.251.0 0.0.0.255 any
+ permit ip any 192.168.251.0 0.0.0.255
+ip access-list extended MovarDDOS-HCU
+ permit ip host 172.16.105.231 any
+ permit ip any host 172.16.105.231
+ip access-list extended SNMPHiba
+ permit ip host 79.121.18.178 any
+ permit ip any host 79.121.18.178
+ip access-list extended SPAMkeres
+ permit ip any host 46.251.9.171
+ permit ip host 46.251.9.171 any
+ip access-list extended Triotel_private
+ permit ip 192.168.160.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.164.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.168.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.172.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.176.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.180.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 192.168.184.0 0.0.3.255 10.89.89.0 0.0.0.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.160.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.164.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.168.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.172.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.176.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.180.0 0.0.3.255
+ permit ip 10.89.89.0 0.0.0.255 192.168.184.0 0.0.3.255
+ip access-list extended VDN-Csorna-NAT
+ remark NAT_src_route
+ deny   ip any 10.0.0.0 0.255.255.255
+ deny   ip any 192.168.0.0 0.0.255.255
+ deny   ip any 172.16.0.0 0.15.255.255
+ deny   ip any 194.149.41.0 0.0.0.255
+ deny   ip any 79.121.0.0 0.0.63.255
+ deny   ip any 94.248.128.0 0.0.31.255
+ deny   ip any 94.248.192.0 0.0.31.255
+ deny   ip any 46.251.16.0 0.0.15.255
+ deny   ip any 94.248.240.0 0.0.7.255
+ deny   ip any 82.141.138.192 0.0.0.31
+ permit ip 100.64.0.0 0.63.255.255 any
+ip access-list extended VDN-NAT
+ deny   ip any 192.168.0.0 0.0.255.255
+ deny   ip any 172.16.0.0 0.15.255.255
+ deny   ip any 10.0.0.0 0.255.255.255
+ deny   ip any 194.149.41.0 0.0.0.255
+ deny   ip any 79.121.0.0 0.0.63.255
+ deny   ip any 94.248.128.0 0.0.31.255
+ deny   ip any 94.248.192.0 0.0.31.255
+ deny   ip any 46.251.16.0 0.0.15.255
+ deny   ip any 94.248.240.0 0.0.7.255
+ deny   ip any 79.121.64.0 0.0.7.255
+ deny   ip any 79.121.88.0 0.0.7.255
+ deny   ip any 46.251.8.0 0.0.7.255
+ permit ip 100.64.0.0 0.63.255.255 any
+ip access-list extended VMware_management
+ permit ip 79.121.0.0 0.0.0.63 192.168.73.0 0.0.0.255
+ permit ip 194.149.41.0 0.0.0.31 192.168.73.0 0.0.0.255
+ permit ip 192.168.71.0 0.0.0.255 192.168.73.0 0.0.0.255
+ permit ip 192.168.73.0 0.0.0.255 79.121.0.0 0.0.0.63
+ permit ip 192.168.73.0 0.0.0.255 194.149.41.0 0.0.0.31
+ permit ip 192.168.73.0 0.0.0.255 192.168.71.0 0.0.0.255
+ip access-list extended acl-copp-match-igmp
+ permit igmp any any
+ip access-list extended acl-copp-match-pim-data
+ deny   pim any host 224.0.0.13
+ permit pim any any
+ip access-list extended phvpn_acl
+ permit ip 192.168.144.0 0.0.15.255 any
+!
+!
+ip prefix-list DSL_RADIUS_POOL seq 5 permit 145.236.100.184/29
+!
+ip prefix-list PLANET_POOL seq 5 permit 194.149.41.0/24
+ip prefix-list PLANET_POOL seq 10 permit 194.149.52.0/24
+!
+ip prefix-list THoV-T-fixip-out seq 5 permit 62.201.96.0/21 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 10 permit 84.1.30.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 15 permit 84.1.32.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 20 permit 84.1.42.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 25 permit 84.1.118.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 30 permit 84.2.25.192/26 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 35 permit 84.2.56.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 40 permit 84.2.226.0/24 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 45 permit 185.65.8.0/22 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 50 permit 188.6.167.0/24 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 55 permit 188.6.250.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 60 permit 188.6.252.0/22 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 65 permit 188.36.224.0/23 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 70 permit 188.36.227.0/24 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 75 permit 188.36.228.0/24 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 80 permit 194.149.40.0/24 ge 27 le 30
+ip prefix-list THoV-T-fixip-out seq 85 permit 194.149.58.0/24 ge 27 le 30
+!
+ip prefix-list THoV-VDN-default seq 5 permit 0.0.0.0/0
+!
+ip prefix-list THoV-VDN-global-in seq 5 permit 10.234.0.0/17 le 23
+ip prefix-list THoV-VDN-global-in seq 10 permit 10.242.0.0/17 le 23
+ip prefix-list THoV-VDN-global-in seq 15 permit 10.232.165.0/25 le 30
+ip prefix-list THoV-VDN-global-in seq 16 permit 10.232.164.0/24 le 30
+!
+ip prefix-list THoV-global-in seq 5 permit 195.228.242.223/32
+ip prefix-list THoV-global-in seq 10 permit 84.2.33.136/32
+ip prefix-list THoV-global-in seq 15 permit 81.183.244.198/32
+ip prefix-list THoV-global-in seq 20 permit 145.236.89.142/32
+ip prefix-list THoV-global-in seq 25 permit 84.183.244.202/32
+ip prefix-list THoV-global-in seq 30 permit 145.236.245.134/32
+ip prefix-list THoV-global-in seq 35 permit 145.236.245.132/30
+ip prefix-list THoV-global-in seq 40 permit 81.183.244.200/30
+ip prefix-list THoV-global-in seq 45 permit 81.183.244.196/30
+ip prefix-list THoV-global-in seq 50 permit 145.236.89.140/30
+!
+ip prefix-list THoV-global-out seq 5 permit 195.228.47.0/24
+ip prefix-list THoV-global-out seq 15 permit 195.228.48.0/24
+ip prefix-list THoV-global-out seq 40 permit 195.228.52.0/25
+ip prefix-list THoV-global-out seq 45 permit 195.228.52.128/25
+ip prefix-list THoV-global-out seq 50 permit 195.228.57.0/25
+ip prefix-list THoV-global-out seq 55 permit 10.242.128.0/17
+ip prefix-list THoV-global-out seq 60 permit 10.232.165.128/25
+ip prefix-list THoV-global-out seq 65 permit 195.228.95.0/25
+ip prefix-list THoV-global-out seq 70 permit 46.107.244.0/22
+ip prefix-list THoV-global-out seq 75 permit 46.107.248.0/23
+ip prefix-list THoV-global-out seq 90 permit 195.228.57.128/25
+ip prefix-list THoV-global-out seq 100 permit 145.236.35.192/26
+ip prefix-list THoV-global-out seq 105 permit 195.228.46.0/24
+ip prefix-list THoV-global-out seq 111 permit 145.236.25.0/24
+ip prefix-list THoV-global-out seq 145 permit 145.236.49.0/24
+ip prefix-list THoV-global-out seq 160 permit 195.228.37.0/24
+ip prefix-list THoV-global-out seq 170 permit 145.236.48.0/24
+ip prefix-list THoV-global-out seq 175 permit 195.228.94.0/24
+ip prefix-list THoV-global-out seq 195 permit 86.59.150.0/23
+ip prefix-list THoV-global-out seq 200 permit 78.92.176.0/23
+ip prefix-list THoV-global-out seq 205 permit 195.228.35.0/24
+ip prefix-list THoV-global-out seq 220 permit 84.1.16.0/22
+ip prefix-list THoV-global-out seq 225 permit 195.228.98.0/24
+ip prefix-list THoV-global-out seq 230 permit 46.139.128.0/22
+ip prefix-list THoV-global-out seq 235 permit 46.139.132.0/22
+ip prefix-list THoV-global-out seq 240 permit 46.139.136.0/22
+ip prefix-list THoV-global-out seq 245 permit 46.139.140.0/22
+ip prefix-list THoV-global-out seq 250 permit 46.139.144.0/22
+ip prefix-list THoV-global-out seq 255 permit 46.139.148.0/22
+ip prefix-list THoV-global-out seq 260 permit 46.139.152.0/22
+ip prefix-list THoV-global-out seq 265 permit 62.201.118.64/28
+ip prefix-list THoV-global-out seq 270 permit 10.247.224.0/19
+!
+ip prefix-list THoV-mgmt-in seq 5 permit 84.2.33.128/26
+ip prefix-list THoV-mgmt-in seq 10 permit 195.228.240.0/24
+ip prefix-list THoV-mgmt-in seq 15 permit 195.228.241.0/25
+ip prefix-list THoV-mgmt-in seq 20 permit 195.228.242.192/26
+ip prefix-list THoV-mgmt-in seq 25 permit 195.228.243.0/24
+ip prefix-list THoV-mgmt-in seq 30 permit 195.228.253.0/24
+!
+ip prefix-list THoV-mgmt-out seq 5 permit 195.228.47.0/24
+ip prefix-list THoV-mgmt-out seq 15 permit 195.228.48.0/24
+ip prefix-list THoV-mgmt-out seq 40 permit 195.228.52.0/25
+ip prefix-list THoV-mgmt-out seq 45 permit 195.228.52.128/25
+ip prefix-list THoV-mgmt-out seq 50 permit 195.228.57.0/25
+ip prefix-list THoV-mgmt-out seq 55 permit 10.242.128.0/17
+ip prefix-list THoV-mgmt-out seq 60 permit 10.234.128.0/17
+ip prefix-list THoV-mgmt-out seq 65 permit 10.232.165.128/25
+ip prefix-list THoV-mgmt-out seq 70 permit 195.228.95.0/25
+ip prefix-list THoV-mgmt-out seq 75 permit 46.107.244.0/22
+ip prefix-list THoV-mgmt-out seq 80 permit 46.107.248.0/23
+ip prefix-list THoV-mgmt-out seq 95 permit 195.228.57.128/25
+ip prefix-list THoV-mgmt-out seq 100 permit 145.236.35.192/26
+ip prefix-list THoV-mgmt-out seq 105 permit 195.228.46.0/24
+ip prefix-list THoV-mgmt-out seq 111 permit 145.236.25.0/24
+ip prefix-list THoV-mgmt-out seq 145 permit 145.236.49.0/24
+ip prefix-list THoV-mgmt-out seq 160 permit 195.228.37.0/24
+ip prefix-list THoV-mgmt-out seq 170 permit 145.236.48.0/24
+ip prefix-list THoV-mgmt-out seq 175 permit 195.228.94.0/24
+ip prefix-list THoV-mgmt-out seq 195 permit 86.59.150.0/23
+ip prefix-list THoV-mgmt-out seq 200 permit 78.92.176.0/23
+ip prefix-list THoV-mgmt-out seq 205 permit 195.228.35.0/24
+ip prefix-list THoV-mgmt-out seq 220 permit 84.1.16.0/22
+ip prefix-list THoV-mgmt-out seq 225 permit 195.228.98.0/24
+ip prefix-list THoV-mgmt-out seq 230 permit 46.139.128.0/22
+ip prefix-list THoV-mgmt-out seq 235 permit 46.139.132.0/22
+ip prefix-list THoV-mgmt-out seq 240 permit 46.139.136.0/22
+ip prefix-list THoV-mgmt-out seq 245 permit 46.139.140.0/22
+ip prefix-list THoV-mgmt-out seq 250 permit 46.139.144.0/22
+ip prefix-list THoV-mgmt-out seq 255 permit 46.139.148.0/22
+ip prefix-list THoV-mgmt-out seq 260 permit 46.139.152.0/22
+ip prefix-list THoV-mgmt-out seq 265 permit 62.201.118.64/28
+ip prefix-list THoV-mgmt-out seq 270 permit 10.247.224.0/19
+!
+ip prefix-list VDN-IP-pool seq 5 permit 79.121.0.0/18
+ip prefix-list VDN-IP-pool seq 10 permit 94.248.128.0/19
+ip prefix-list VDN-IP-pool seq 15 permit 94.248.192.0/19
+ip prefix-list VDN-IP-pool seq 20 permit 46.251.16.0/20
+ip prefix-list VDN-IP-pool seq 25 permit 94.248.240.0/21
+!
+ip prefix-list VDN-IP-pool-Kapuvar seq 5 permit 94.248.240.0/21
+!
+ip prefix-list VDN-IP-pool-wNAT seq 5 permit 79.121.0.0/18
+ip prefix-list VDN-IP-pool-wNAT seq 10 permit 94.248.128.0/19
+ip prefix-list VDN-IP-pool-wNAT seq 15 permit 94.248.192.0/19
+ip prefix-list VDN-IP-pool-wNAT seq 20 permit 46.251.16.0/20
+ip prefix-list VDN-IP-pool-wNAT seq 25 permit 94.248.240.0/21
+ip prefix-list VDN-IP-pool-wNAT seq 26 permit 79.121.64.0/21
+ip prefix-list VDN-IP-pool-wNAT seq 27 permit 79.121.88.0/21
+ip prefix-list VDN-IP-pool-wNAT seq 28 permit 46.251.8.0/21
+ip prefix-list VDN-IP-pool-wNAT seq 30 permit 100.64.0.0/10
+!
+ip prefix-list VDN-NAT-pool seq 10 permit 100.64.0.0/10
+!
+ip prefix-list VDN-SUPRA-pool seq 5 permit 79.121.64.0/21
+ip prefix-list VDN-SUPRA-pool seq 10 permit 79.121.88.0/21
+ip prefix-list VDN-SUPRA-pool seq 15 permit 46.251.8.0/21
+!
+ip prefix-list VDNVRF_connected seq 10 permit 10.50.0.0/16 le 17
+ip prefix-list VDNVRF_connected seq 20 permit 79.121.0.0/20
+!
+ip prefix-list VDN_VoIP_default_in seq 5 permit 0.0.0.0/0
+!
+ip prefix-list VDN_VoIP_in seq 10 permit 81.183.204.0/29
+ip prefix-list VDN_VoIP_in seq 20 permit 81.183.204.8/29
+ip prefix-list VDN_VoIP_in seq 30 permit 81.183.204.128/29
+ip prefix-list VDN_VoIP_in seq 40 permit 81.183.204.136/29
+!
+ip prefix-list VDN_VoIP_pool seq 5 permit 10.50.0.0/16
+ip prefix-list VDN_VoIP_pool seq 10 permit 10.232.165.128/25
+!
+ip prefix-list deny-any seq 5 deny 0.0.0.0/0 le 32
+logging history size 250
+logging trap debugging
+logging source-interface Vlan20
+logging host 79.121.0.34
+access-list 77 permit 10.242.146.1
+access-list 100 permit ip 79.121.0.0 0.0.63.255 any
+access-list 100 permit ip 94.248.128.0 0.0.31.255 any
+access-list 100 permit ip 94.248.192.0 0.0.31.255 any
+access-list 101 permit ip 195.56.99.0 0.0.0.255 any
+access-list 102 deny   ip 195.56.99.0 0.0.0.255 10.0.0.0 0.255.255.255
+access-list 102 deny   ip 195.56.99.0 0.0.0.255 172.0.0.0 0.31.255.255
+access-list 102 deny   ip 195.56.99.0 0.0.0.255 192.168.0.0 0.0.255.255
+access-list 102 deny   ip 195.56.99.0 0.0.0.255 169.254.0.0 0.0.255.255
+access-list 102 deny   ip 195.56.99.0 0.0.0.255 79.121.0.0 0.0.63.255
+access-list 102 permit ip 195.56.99.0 0.0.0.255 any
+access-list 106 permit ip 195.228.48.0 0.0.0.255 any
+access-list 106 permit ip 195.228.47.0 0.0.0.127 any
+access-list 106 permit ip 195.228.47.128 0.0.0.127 any
+access-list 106 permit ip 195.228.48.0 0.0.0.127 any
+access-list 106 permit ip 195.228.48.128 0.0.0.127 any
+access-list 106 permit ip 195.228.52.0 0.0.0.127 any
+access-list 106 permit ip 195.228.52.128 0.0.0.127 any
+access-list 106 permit ip 195.228.57.0 0.0.0.127 any
+access-list 106 permit ip 195.228.57.0 0.0.0.255 any
+access-list 106 permit ip 145.236.35.192 0.0.0.63 any
+access-list 106 permit ip 195.228.46.0 0.0.0.255 any
+access-list 106 permit ip 145.236.25.0 0.0.0.127 any
+access-list 106 permit ip 145.236.49.0 0.0.0.255 any
+access-list 106 permit ip 195.228.37.0 0.0.0.255 any
+access-list 106 permit ip 195.228.95.0 0.0.0.127 any
+access-list 106 permit ip 145.236.48.0 0.0.0.255 any
+access-list 106 permit ip 195.228.94.0 0.0.0.255 any
+access-list 106 permit ip 145.236.25.128 0.0.0.63 any
+access-list 106 permit ip 86.59.150.0 0.0.1.255 any
+access-list 106 permit ip 78.92.176.0 0.0.1.255 any
+access-list 106 permit ip 195.228.35.0 0.0.0.255 any
+access-list 106 permit ip 84.1.16.0 0.0.3.255 any
+access-list 106 permit ip 195.228.98.0 0.0.0.255 any
+access-list 106 permit ip 145.236.25.0 0.0.0.255 any
+access-list 106 permit ip 46.139.128.0 0.0.3.255 any
+access-list 106 permit ip 46.139.132.0 0.0.3.255 any
+access-list 106 permit ip 46.139.136.0 0.0.3.255 any
+access-list 106 permit ip 46.139.140.0 0.0.3.255 any
+access-list 106 permit ip 46.139.144.0 0.0.3.255 any
+access-list 106 permit ip 46.139.148.0 0.0.3.255 any
+access-list 106 permit ip 46.139.152.0 0.0.3.255 any
+access-list 106 permit ip 46.107.244.0 0.0.3.255 any
+access-list 107 permit ip any 195.228.242.192 0.0.0.63
+access-list 107 permit ip any 84.2.33.128 0.0.0.63
+access-list 108 permit ip host 195.228.47.16 any
+access-list 109 permit ip any 192.168.144.0 0.0.15.255
+access-list 109 deny   tcp any any
+access-list 110 permit ip 192.168.250.0 0.0.0.255 172.16.100.0 0.0.0.255
+access-list 111 permit ip 172.16.106.0 0.0.0.255 172.16.98.0 0.0.0.255
+access-list 111 permit ip 172.16.105.0 0.0.0.255 172.16.98.0 0.0.0.255
+access-list 111 permit ip 172.16.105.0 0.0.0.255 172.16.100.0 0.0.0.255
+access-list 111 permit ip 172.16.106.0 0.0.0.255 172.16.100.0 0.0.0.255
+access-list 112 permit ip 94.248.240.0 0.0.7.255 any
+access-list 161 permit ip host 0.0.0.0 host 255.255.255.255
+access-list 162 permit ip host 0.0.0.0 host 255.255.255.0
+access-list 162 permit udp host 79.121.0.38 host 79.121.0.38 eq bootps
+access-list 162 permit udp host 79.121.8.1 host 79.121.0.38 eq bootpc
+access-list 162 permit udp host 79.121.0.38 host 79.121.8.1 eq bootps
+access-list 162 permit udp host 79.121.0.38 host 79.121.8.1 eq bootpc
+access-list 177 permit ip host 10.234.129.190 any
+access-list 177 permit ip any host 10.234.129.190
+access-list 178 permit ip host 10.234.136.93 any
+access-list 178 permit ip any host 10.234.136.93
+access-list 198 permit ip host 79.121.1.212 any
+access-list 198 permit ip any host 79.121.1.212
+access-list 199 permit icmp 10.200.0.0 0.0.0.255 10.200.0.0 0.0.0.255
+access-list 2000 permit ip 100.64.0.0 0.63.255.255 any
+ipv6 route 2A03:BF00:201:7::/64 2A03:BF00:201:6::2
+ipv6 route 2A03:BF00:202::/48 2A03:BF00:201:6::2
+ipv6 route 2A03:BF00:200::/40 Null0
+ipv6 route FC00:0:0:E600::/64 FC00:0:0:3000::100
+!
+!
+ipv6 prefix-list VDN-IPv6-pool seq 5 permit 2A03:BF00:200::/40
+route-map rm-TCom-VoIP-in permit 10
+ match ip address prefix-list VDN_VoIP_in
+ set weight 1
+!
+route-map rm-THoV-mgmt-in permit 10
+ match ip address prefix-list THoV-mgmt-in
+!
+route-map rm-THoV-VDN-global-out permit 10
+ match ip address prefix-list THoV-VDN-default
+!
+route-map rm-THoV-T-fixip-in deny 10
+!
+route-map rm-THoV-src-route permit 9
+ match ip address 107
+ set ip next-hop 145.236.116.70
+!
+route-map rm-THoV-src-route permit 10
+ match ip address 106
+ set ip next-hop 145.236.116.68 145.236.92.96
+!
+route-map rm-THoV-src-route permit 30
+ match ip address 111
+ set ip next-hop 79.121.0.19
+!
+route-map rm-THoV-src-route permit 90
+ match ip address VDN-NAT
+ set ip next-hop 192.168.254.242
+!
+route-map tcom-out-spare permit 10
+ match ip address prefix-list VDN-IP-pool PLANET_POOL DSL_RADIUS_POOL VDN-SUPRA-pool
+ match as-path 10
+!
+route-map rm-Kapuvar-NAT permit 10
+ description Kapuvar_NAT_route_map
+ match ip address VDN-NAT
+ set ip next-hop 192.168.243.74
+!
+route-map VRF_Import_teszt permit 10
+ match ip address prefix-list VDNVRF_connected
+!
+route-map tteszt permit 10
+ match ip address 108
+ set ip next-hop 194.149.27.93
+!
+route-map tcom-in-main permit 10
+ match as-path 20
+ set weight 100
+!
+route-map bgp_enabled_routes permit 10
+ match ip address prefix-list VDN-IP-pool THoV-mgmt-out THoV-global-out THoV-VDN-default VDN-IP-pool-Kapuvar VDN-NAT-pool PLANET_POOL VDN-SUPRA-pool
+!
+route-map rm-THoV-global-in permit 10
+ match ip address prefix-list THoV-global-in
+!
+route-map recursive-teszt permit 10
+ match ip address 110
+!
+route-map tcom-in permit 10
+ match as-path 20
+ set weight 100
+!
+route-map rm-CsornaNAT-src-route permit 10
+ match ip address VDN-Csorna-NAT
+ set ip next-hop 192.168.254.242
+!
+route-map tcom-out permit 10
+ match ip address prefix-list VDN-IP-pool PLANET_POOL DSL_RADIUS_POOL
+ match as-path 10
+!
+route-map rm-DTV-Pecs-DLAN permit 10
+ match ip address 110
+ set ip next-hop 79.121.0.19
+!
+route-map tcom-in-spare permit 10
+ match as-path 20
+ set weight 100
+!
+route-map rm-TCom-VoIP-out permit 10
+ match ip address prefix-list VDN_VoIP_pool
+!
+route-map rm-THoV-mgmt-out permit 10
+ match ip address prefix-list THoV-mgmt-out THoV-T-fixip-out
+!
+route-map rm-THoV-VDN-global-in permit 10
+ match ip address prefix-list THoV-VDN-global-in
+!
+route-map ipv6-bgp-enabled-routes permit 10
+ match ipv6 address prefix-list VDN-IPv6-pool
+!
+route-map rm-THoV-T-fixip-out permit 10
+ match ip address prefix-list THoV-T-fixip-out
+!
+route-map gtsgw permit 10
+ match ip address 102
+ set ip next-hop 194.149.27.93
+!
+route-map tcom-out-main permit 10
+ match ip address prefix-list VDN-IP-pool PLANET_POOL DSL_RADIUS_POOL VDN-SUPRA-pool
+ match as-path 10
+!
+route-map rm-THoV-global-out permit 10
+ match ip address prefix-list THoV-global-out THoV-T-fixip-out
+!
+route-map rm-THoV-src-route-noNAT permit 10
+ match ip address 107
+ set ip next-hop 145.236.116.70
+!
+route-map rm-THoV-src-route-noNAT permit 20
+ match ip address 106
+ set ip next-hop 145.236.116.68 145.236.92.96
+!
+route-map rm-THoV-src-route-noNAT permit 30
+ match ip address 111
+ set ip next-hop 79.121.0.19
+!
+snmp-server community nemesis_read RO
+snmp-server community nemesis_write RW
+snmp-server community nemesisread RO
+snmp-server community nemesiswrite RW
+!
+!
+!
+!
+ipv6 access-list acl-copp-match-mld
+ permit icmp any any mld-report
+ permit icmp any any mld-query
+ permit icmp any any mld-reduction
+ permit icmp any any 143
+!
+ipv6 access-list acl-copp-match-ndv6
+ permit icmp any any nd-na
+ permit icmp any any nd-ns
+ permit icmp any any router-advertisement
+ permit icmp any any router-solicitation
+ permit icmp any any redirect
+!
+ipv6 access-list acl-copp-match-ndv6hl
+ permit icmp any any nd-na hoplimit
+ permit icmp any any nd-ns hoplimit
+ permit icmp any any router-advertisement hoplimit
+ permit icmp any any router-solicitation hoplimit
+ permit icmp any any redirect hoplimit
+!
+ipv6 access-list acl-copp-match-pimv6-data
+ deny 103 any host FF02::D
+ permit 103 any any
+!
+control-plane
+ service-policy input policy-default-autocopp
+!
+!
+vstack
+privilege exec level 4 show startup-config
+privilege exec level 4 show running-config view full
+privilege exec level 4 show running-config view
+privilege exec level 4 show running-config
+privilege exec level 4 show configuration
+privilege exec level 4 show
+!
+line con 0
+line aux 0
+line vty 0 4
+ access-class Management_IPs in
+ exec-timeout 0 0
+ logging synchronous
+ transport input ssh
+line vty 5 15
+ access-class Management_IPs in
+ logging synchronous
+ transport input ssh
+!
+ntp server 79.121.0.19
+diagnostic bootup level minimal
+no event manager policy Mandatory.go_switchbus.tcl type system
+!
+end
